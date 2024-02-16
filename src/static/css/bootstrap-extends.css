@@ -1,0 +1,33 @@
+.mt-8 {
+    margin-top: 8rem !important;
+}
+
+.ps-8 {
+    padding-left: 8rem !important;
+}
+
+.mb-8 {
+    margin-bottom: 8rem !important;
+}
+
+.front-page {
+    background: url(/static/images/front.jpg);
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.white-text {
+    color: white;
+}
+
+.cyan-glow {
+    filter: drop-shadow(0 0 0.75rem cyan);
+}
+
+.cyan-glow:hover {
+    opacity: 90%;
+    filter: drop-shadow(0 0 0.75rem rgba(0, 255, 255, 0.705)) drop-shadow(0 0 0.75rem rgba(0, 255, 255, 0.705)) drop-shadow(0 0 0.75rem rgba(0, 255, 255, 0.705));
+    transition: .5s;
+}

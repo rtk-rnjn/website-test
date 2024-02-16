@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% from "navbar.html" import navbar %}
+{% from "footer.html" import footer %}
+{% from "language_dropdown.html" import language_dropdown %}
+
+{% block head %}
+<style>
+    #output {
+        height: 750px;
+        resize: none;
+        border-radius: 0px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/hint/show-hint.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/hint/show-hint.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.8.0/addon/hint/python-hint.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/clike/clike.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/hint/anyword-hint.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/hint/javascript-hint.min.js"></script>
+
+{% if scripts_and_styles %}
+{{ scripts_and_styles }}
+{% endif %}
+
+{% endblock %}
+
+{% block body %}
+{{ navbar() }}
+
+<div class="container-xl">
+    <div class="alert alert-warning text-center">
+        Your code should not take more than 60 seconds to execute, else it will be terminated. The IDE is powered by <a
+            href="https://tio.run/#">Try It Online</a>.
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container d-flex align-items-center justify-content-center">
+                <div>
+                    <p class="fs-4">Write your code here</p>
+                </div>
+                <div class="ms-auto">
+                    {{ language_dropdown() }}
+                </div>
+                <div class="ms-auto">
+                    <button class="btn border border-1" id="run-code">Execute</button>
+                </div>
+            </div>
+
+            <div id="code-editor" class="border border-1 mt-1"></div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="container d-flex align-items-center justify-content-center">
+                <div>
+                    <p class="fs-3">Output</p>
+                </div>
+                <div class="ms-auto">
+                    <button class="btn border border-1" id="clear-output">Clear Output</button>
+                </div>
+            </div>
+
+            <textarea id="output" class="form-control shadow-none" rows="30" readonly></textarea>
+        </div>
+    </div>
+</div>
+
+{{ footer() }}
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const mapper = {
+        'c-gcc': {
+            name: `text/x-csrc`,
+            code: `// write your code here\n\n#include <stdio.h>\n\nint main() {\n    printf("Hello, World!");\n    return 0;\n}`,
+        },
+        'cpp-gcc': {
+            name: `text/x-c++src`,
+            code: `// write your code here\n\n#include <iostream>\n\nint main() {\n    std::cout << "Hello, World!";\n    return 0;\n}`,
+        },
+        'cs-core': {
+            name: `csharp`,
+            code: `// write your code here\n\nusing System;\n\nnamespace HelloWorld {\n    class Program {\n        static void Main(string[] args) {\n            Console.WriteLine("Hello, World!");\n        }\n    }\n}`,
+        },
+        'java-jdk': {
+            name: `text/x-java`,
+            code: `// write your code here\n\nclass HelloWorld {\n    public static void main(String[] args) {\n        System.out.println("Hello, World!");\n    }\n}`,
+        },
+        'javascript-node': {
+            name: `text/javascript`,
+            code: `// write your code here\n\nconsole.log("Hello, World!");`,
+        },
+        'python3': {
+            name: `text/x-python`,
+            code: `# write your code here\n\nprint("Hello, World!")`,
+        },
+    };
+
+    let selectedValue = 'c-gcc';
+    let radioButtons = document.querySelectorAll('input[name="language"]');
+
+    let editor;
+
+    radioButtons.forEach(function (radioButton) {
+        radioButton.addEventListener('change', () => {
+            selectedValue = document.querySelector('input[name="language"]:checked').value;
+            editor.setValue(mapper[selectedValue].code);
+        })
+    });
+
+    function configEditor(value, mode) {
+        editor = CodeMirror(document.getElementById("code-editor"), {
+            value: value,
+            mode: mode,
+            lineNumbers: true,
+        });
+        editor.setSize("100%", "750px");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        configEditor(mapper[selectedValue].code, mapper[selectedValue].name);
+    });
+
+    document.getElementById('run-code').addEventListener('click', function () {
+        document.getElementById('output').value = 'Executing...';
+        let code = editor.getValue();
+        let language = selectedValue;
+
+        let data = {
+            language: language,
+            code: code
+        };
+
+        let output = document.getElementById('output');
+
+        const jsonData = JSON.stringify(data);
+        fetch('/api/tio', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: jsonData,
+        })
+            .then(response => response.json())
+            .then(data => {
+                output.value = data.output;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    });
+
+    document.getElementById('clear-output').addEventListener('click', function () {
+        document.getElementById('output').value = '';
+    });
+
+</script>
+{% endblock %}
