@@ -1,24 +1,13 @@
 import flask
-from flask import render_template, request
 
 from src import app, flask_login, login_manager
-from src.utils.tio import Tio
-
-users: dict[str, dict[str, str]] = {"email@domain.com": {"password": "p"}}
-
-
-@app.route("/")
-def index() -> str:
-    return render_template("index.html", title="Index")
-
-
-@app.route("/resources/universal_ide")
-def universal_ide():
-    return render_template(template_name_or_list="ide.html", title="IDE")
 
 
 class User(flask_login.UserMixin):
     pass
+
+
+users: dict[str, dict[str, str]] = {"email@domain.com": {"password": "p"}}
 
 
 @login_manager.user_loader
@@ -73,16 +62,3 @@ def login():
 @flask_login.login_required
 def protected():
     return "Logged in as: " + flask_login.current_user.id
-
-
-@app.route("/api/tio", methods=["POST"])
-async def tio():
-    lang = request.get_json().get("language")
-    code = request.get_json().get("code")
-
-    if not lang or not code:
-        return "Invalid request", 400
-
-    tio = Tio(lang, code)
-    st: str = await tio.send()
-    return {"output": st, "language": lang, "code": code}
