@@ -31,3 +31,46 @@
     filter: drop-shadow(0 0 0.75rem rgba(0, 255, 255, 0.705)) drop-shadow(0 0 0.75rem rgba(0, 255, 255, 0.705)) drop-shadow(0 0 0.75rem rgba(0, 255, 255, 0.705));
     transition: .5s;
 }
+
+
+#title {
+    font-size:small;
+    color: #000000;
+
+}
+
+.row {
+    padding: 0.1%;
+}
+
+.tline {
+    padding-top: 15%;
+    font-family:'Montserrat', sans-serif;
+    line-height: 1.5;
+    font-size: 3rem;
+}
+
+.title-img {
+    padding-top: 7%;
+    left: 60%;
+    width: 35%;
+    position: absolute;
+}
+
+.tgline {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    font-size: 1rem;
+    padding-bottom: 5%;
+}
+
+.container-title {
+    padding: 3% 10%;
+    padding-bottom: 7%;
+}
+
+@media only screen and (max-width: 1026px) {
+    .title-img{
+        display: none;
+    }
+}
