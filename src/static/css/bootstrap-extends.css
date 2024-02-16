@@ -10,6 +10,42 @@
     margin-bottom: 8rem !important;
 }
 
+#title {
+    font-size:small;
+    color: #000000;
+
+}
+
+.row {
+    padding: 0.1%;
+}
+
+.tline {
+    padding-top: 15%;
+    font-family:'Montserrat', sans-serif;
+    line-height: 1.5;
+    font-size: 3rem;
+}
+
+.title-img {
+    padding-top: 7%;
+    left: 60%;
+    width: 35%;
+    position: absolute;
+}
+
+.tgline {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    font-size: 1rem;
+    padding-bottom: 5%;
+}
+
+.container-title {
+    padding: 3% 10%;
+    padding-bottom: 7%;
+}
+
 .front-page {
     background: url(/static/images/front.jpg);
     background-repeat: no-repeat;
