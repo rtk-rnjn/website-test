@@ -33,6 +33,16 @@
 }
 
 
+#title {
+    font-size:small;
+    color: #ffffff;
+
+}
+
+.row {
+    padding: 0.1%;
+}
+
 .tline {
     padding-top: 15%;
     font-family: 'Montserrat', sans-serif;

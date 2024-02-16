@@ -11,7 +11,7 @@
 {% block body %}
 {{ navbar() }}
 
-<section style="font-size: small; color: black;">
+<section style="font-size: small">
     <div class="container-fluid container-title">
         <div class="row">
             <div class="col-lg-6">
@@ -20,7 +20,7 @@
                     Build a unique
                     skillset based on your natural talents and watch your career and life flourish.
                 </p>
-                <button class="btn btn-dark btn-lg" type="button"><i class="fa-brands fa-apple"></i>Sign up</button>
+                <button class="btn btn-dark btn-lg border border-light" type="button"><i class="fa-brands fa-apple"></i>Sign up</button>
             </div>
             <div class="col-lg-6 img-tg ">
                 <img class="title-img" src="{{ url_for('static', filename='images/study.png') }}" alt="study-img">
@@ -32,7 +32,39 @@
 <hr>
 <br>
 
-{{ front_aptitude() }}
+<div class="container p-1">
+    <div class="row">
+        <div class="col mt-3 pt-3">
+            <h1 class="text-center">Learn Aptitude</h1>
+            <div class="row gap-0 column-gap-3 row-gap-3 text-center mt-5">
+                <div class="col p-3 border border-2 border-light fs-4 rounded rounded-3 cyan-glow">
+                    <a class="nav-link" href="">
+                        <i class="bi bi-gear fs-1"></i>
+                        <p class="fs-3">
+                            Quantitative Aptitude
+                        </p>
+                    </a>
+                </div>
+                <div class="col p-3 border border-2 border-light fs-4 rounded rounded-3 cyan-glow">
+                    <a class="nav-link" href="">
+                        <i class="bi bi-patch-question fs-1"></i>
+                        <p class="fs-3">
+                            Logical Reasoning
+                        </p>
+                    </a>
+                </div>
+                <div class="col p-3 border border-2 border-light fs-4 rounded rounded-3 cyan-glow">
+                    <a class="nav-link" href="">
+                        <i class="bi bi-clipboard-data fs-1"></i>
+                        <p class="fs-3">
+                            Data Interpretation
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <br>
 <hr class="mt-5">
