@@ -1,2 +1,2 @@
 @echo off
-gunicorn -w 4 -k gevent 'main:app'
+waitress-serve --listen=localhost:5000 main:app
