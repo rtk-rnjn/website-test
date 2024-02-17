@@ -1,7 +1,7 @@
 from flask import request
 
 from src import app
-from src.utils.tio import Tio
+from src.utils.tio import Tio, parse_output
 
 
 @app.route("/api/tio", methods=["POST"])
@@ -14,4 +14,5 @@ async def tio():
 
     tio = Tio(lang, code)
     st: str = await tio.send()
-    return {"output": st, "language": lang, "code": code}
+
+    return {"language": lang, "code": code, **parse_output(st)}

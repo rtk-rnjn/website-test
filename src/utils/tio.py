@@ -8,6 +8,36 @@ import aiohttp
 to_bytes = partial(bytes, encoding="utf-8")
 
 
+def _split_with_limit(text: str, limit: int = 5) -> list[str]:
+    lines: list[str] = text.splitlines()
+    return lines[-limit:] + ["\n".join(lines[:-limit])] if lines else []
+
+
+def _parse_split_text_tio(texts: list[str]) -> dict[str, str]:
+    # ['Real time: 0.037 s', 'User time: 0.031 s', 'Sys. time: 0.006 s', 'CPU share: 98.75 %', 'Exit code: 0', 'hello world\n']
+    real_time: float = float(texts[0].split(":")[1][:-1])
+    user_time: float = float(texts[1].split(":")[1][:-1])
+    sys_time: float = float(texts[2].split(":")[1][:-1])
+    cpu_share: float = float(texts[3].split(":")[1][:-1])
+    exit_code: int = int(texts[4].split(":")[1])
+
+    output: str = texts[-1]
+
+    return {
+        "real_time": real_time,
+        "user_time": user_time,
+        "sys_time": sys_time,
+        "cpu_share": cpu_share,
+        "exit_code": exit_code,
+        "output": output,
+    }
+
+
+def parse_output(text: str) -> dict[str, str]:
+    texts = _split_with_limit(text)
+    return _parse_split_text_tio(texts)
+
+
 def _to_tio_string(couple):
     name, obj = couple[0], couple[1]
     if not obj:
@@ -60,5 +90,7 @@ class Tio:
                 raise aiohttp.ClientError(res.status)
 
             data = await res.read()
-            data = data.decode("utf-8")
-            return data.replace(data[:16], "")  # remove token
+            data: str = data.decode("utf-8")
+            data = data.replace(data[:16], "")
+
+            return data

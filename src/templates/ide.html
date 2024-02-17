@@ -5,10 +5,8 @@
 
 {% block head %}
 <style>
-    #output {
-        height: 750px;
-        resize: none;
-        border-radius: 0px;
+    #output,
+    #system-output {
         font-family: 'Courier New', Courier, monospace;
     }
 </style>
@@ -70,7 +68,14 @@
                 </div>
             </div>
 
-            <textarea id="output" class="form-control shadow-none" rows="30" readonly></textarea>
+            <div class="row">
+                <div class="col">
+                    <textarea id="output" class="form-control shadow-none border border-1 rounded rounded-0 mb-2"
+                        style="resize: none;" rows="18" readonly></textarea>
+                    <textarea id="system-output" class="form-control shadow-none border border-1 rounded rounded-0"
+                        style="resize: none;" rows="10" readonly></textarea>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -143,6 +148,7 @@
         };
 
         let output = document.getElementById('output');
+        let systemOutput = document.getElementById('system-output')
 
         const jsonData = JSON.stringify(data);
         fetch('/api/tio', {
@@ -155,6 +161,13 @@
             .then(response => response.json())
             .then(data => {
                 output.value = data.output;
+                systemOutput.value = `Real Time: ${data.real_time}s
+User Time: ${data.user_time}s
+Sys. Time: ${data.sys_time}s
+
+CPU Share: ${data.cpu_share}%
+
+[Exit Code: ${data.exit_code}]`;
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -163,6 +176,7 @@
 
     document.getElementById('clear-output').addEventListener('click', function () {
         document.getElementById('output').value = '';
+        document.getElementById('system-output').value = '';
     });
 
 </script>
