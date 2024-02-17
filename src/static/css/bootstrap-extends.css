@@ -23,24 +23,13 @@
 }
 
 .cyan-glow {
-    filter: drop-shadow(0 0 0.75rem cyan);
+    filter: drop-shadow(0 0 0.35rem rgba(0, 47, 255, 0.534));
 }
 
 .cyan-glow:hover {
-    opacity: 90%;
-    filter: drop-shadow(0 0 0.75rem rgba(0, 255, 255, 0.705)) drop-shadow(0 0 0.75rem rgba(0, 255, 255, 0.705)) drop-shadow(0 0 0.75rem rgba(0, 255, 255, 0.705));
-    transition: .5s;
-}
-
-
-#title {
-    font-size:small;
-    color: #ffffff;
-
-}
-
-.row {
-    padding: 0.1%;
+    transform: matrix3d(1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1);
+    filter: drop-shadow(0 0 0.35rem rgba(152, 0, 182, 0.685));
+    transition: .2s ease-in-out;
 }
 
 .tline {
