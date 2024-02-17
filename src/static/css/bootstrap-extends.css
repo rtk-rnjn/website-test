@@ -43,6 +43,7 @@
     padding-top: 7%;
     left: 60%;
     width: 35%;
+    max-width:500px;
     position: absolute;
 }
 
