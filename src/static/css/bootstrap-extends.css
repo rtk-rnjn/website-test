@@ -32,24 +32,17 @@
     transition: .2s ease-in-out;
 }
 
-.tline {
-    padding-top: 15%;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
+.fs-1-lg {
     font-size: 3rem;
 }
 
 .title-img {
-    padding-top: 7%;
     left: 60%;
     width: 35%;
-    max-width:500px;
-    position: absolute;
 }
 
 .container-title {
     padding: 3% 10%;
-    padding-bottom: 7%;
 }
 
 @media only screen and (max-width: 1026px) {

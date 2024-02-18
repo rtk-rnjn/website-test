@@ -35,8 +35,9 @@
                         {% for option in item.options %}
                         {% set _index = loop.index - 1 %}
                         {% set i = _index | string %}
-                        <input class="m-3 p-3" type="radio" name="question{{ index }}" value="{{ option[i] }}"> <label
-                            for="question{{ index }}" class="fs-5">{{ option[i] }}</label>
+                        <input class="m-3 p-3" type="radio" name="question{{ index }}" value="{{ option[i] }}"> <label for="question{{ index }}" class="fs-5">
+                            {{ option[i] }}
+                        </label>
                         <br>
                         {% endfor %}
                     </div>
@@ -50,7 +51,7 @@
             <div class="mb-3 fs-5">All Questions</div>
             <div class="row">
                 {% for item in questions['questions'] %}
-                <div class="col">
+                <div class="col-2 mb-2">
                     <button class="btn border border-1">{{ loop.index }}</button>
                 </div>
                 {% endfor %}
