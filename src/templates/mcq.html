@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% from "navbar.html" import navbar %}
+{% from "footer.html" import footer %}
+
+{% block body %}
+{{ navbar() }}
+<div class="row">
+    <div class="col-9">
+        <div class="container m-2 p-2 fs-6">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, rem.
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="container m-2 p-2 fs-6">
+            time
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-9 overflow-scroll vh-100 border border border-dark">
+        {% for item in questions['questions'] %}
+        <div class="border-dark border mb-3 mt-3 ms-2">
+            <div class="row">
+                <div class="col">
+                    <div class="container m-3 fs-4 d-flex">
+                        {% set index = loop.index %}
+                        <span class="m-3"><b>Question {{ index }}.</b></span>
+                        <span class="m-3">{{ item.question }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="container pb-4">
+                        {% for option in item.options %}
+                        {% set _index = loop.index - 1 %}
+                        {% set i = _index | string %}
+                        <input class="m-3 p-3" type="radio" name="question{{ index }}" value="{{ option[i] }}"> <label
+                            for="question{{ index }}" class="fs-5">{{ option[i] }}</label>
+                        <br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-3 p-3 border border-dark">
+        <div class="container text-center">
+            <div class="mb-3 fs-5">All Questions</div>
+            <div class="row">
+                {% for item in questions['questions'] %}
+                <div class="col">
+                    <button class="btn border border-1">{{ loop.index }}</button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 fs-6">
+        content
+    </div>
+</div>
+
+
+{% endblock %}
