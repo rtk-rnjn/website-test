@@ -248,8 +248,32 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+
 .mobile-view{
 	display: none;
+}
+
+.reg-title {
+	height: 55px;
+	padding: 5px;
+}
+
+.reg-container {
+	border-radius: 20px;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	height: 600px;
+}
+
+.reg-signup:hover {
+	width: 30%;
+	height: 10%;
+	transform: 0.2;
 }
 
 @media only screen and (max-width: 650px) {
