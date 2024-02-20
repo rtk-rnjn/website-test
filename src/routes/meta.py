@@ -1,7 +1,9 @@
+import json
+
 from flask import render_template
 
 from src import app
-import json
+
 
 @app.route("/")
 def index() -> str:
@@ -15,6 +17,7 @@ def universal_ide() -> str:
 
 with open("python.json") as f:
     questions = json.load(f)
+
 
 @app.route("/test")
 def test() -> str:

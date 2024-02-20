@@ -8,3 +8,7 @@ gunicorn ; sys_platform == 'linux'
 python-dotenv
 uvloop ; sys_platform == 'linux'
 waitress
+pymongo
+email-validator
+Flask-WTF
+dnspython
