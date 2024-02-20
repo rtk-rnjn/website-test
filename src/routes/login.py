@@ -34,4 +34,7 @@ def login():
 @app.route("/protected")
 @login_required
 def protected():
+    assert current_user.is_authenticated # This is a proxy for the login_required decorator
+    assert isinstance(current_user, User)
+
     return "Logged in as: " + current_user.email
