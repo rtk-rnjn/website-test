@@ -140,13 +140,13 @@
         let language = selectedValue;
 
         let data = {
-            language: language,
-            code: code
+            "language": `${language}`,
+            "code": `${code}`
         };
 
         let output = document.getElementById('output');
         let systemOutput = document.getElementById('system-output')
-
+        console.log(data);
         const jsonData = JSON.stringify(data);
         fetch('/api/tio', {
             method: 'POST',
