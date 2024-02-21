@@ -9,7 +9,6 @@ async def tio():
     lang: str = request.get_json().get("language", "")
     code: str = request.get_json().get("code", "")
 
-    print(lang, code)
     if not lang or not code:
         return "Invalid request", 401
 
