@@ -41,7 +41,10 @@
 
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <div class="suggestion-container">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" oninput="showSuggestions(this)">
+                        <div class="form-control suggestions text-muted" id="suggestions-container"></div>
+                    </div>
                     <button class="btn btn-outline-primary white-text" type="submit">Search</button>
                 </form>
             </div>
