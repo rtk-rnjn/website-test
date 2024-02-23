@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect
 from pymongo import MongoClient
-from flask_admin import Admin
 
 if TYPE_CHECKING:
     from src.utils.types import FlaskClass
