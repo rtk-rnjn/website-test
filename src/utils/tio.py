@@ -14,7 +14,6 @@ def _split_with_limit(text: str, limit: int = 5) -> list[str]:
 
 
 def _parse_split_text_tio(texts: list[str]) -> dict[str, str]:
-    # ['Real time: 0.037 s', 'User time: 0.031 s', 'Sys. time: 0.006 s', 'CPU share: 98.75 %', 'Exit code: 0', 'hello world\n']
     real_time: float = float(texts[0].split(":")[1][:-1])
     user_time: float = float(texts[1].split(":")[1][:-1])
     sys_time: float = float(texts[2].split(":")[1][:-1])

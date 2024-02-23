@@ -116,7 +116,7 @@ class DocxParser:
 def parse_questions(text: str):
     questions = []
     question_regex_sep = r"Question\s*\d+:"
-    correct_option_regex = r"Answer:\s*\(([A-D])\)"
+    correct_option_regex = r"Answer:\s*\(?([A-D])\)?"
 
     _questions: list[str] = re.split(question_regex_sep, text)
 

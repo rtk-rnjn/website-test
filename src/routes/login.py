@@ -23,7 +23,8 @@ def login():
         if check_password_hash(password_hash, form.password.data):
             user = User()
             user.email = email
-            login_user(user)
+            login_user(user, remember=True)
+
             return redirect(url_for("protected"))
 
         return "<h1>Invalid email or password</h1>"
