@@ -5,6 +5,8 @@ from functools import partial
 
 import aiohttp
 
+from src.utils.caching import cache_function_result, Cache
+
 to_bytes = partial(bytes, encoding="utf-8")
 
 
@@ -71,6 +73,7 @@ class Tio:
             "TIO_OPTIONS": command_line_options,
             "args": args,
         }
+        self.__string = strings
 
         bytes_ = (
             b"".join(
@@ -82,6 +85,10 @@ class Tio:
         # This returns a DEFLATE-compressed bytestring, which is what the API requires
         self.request = zlib.compress(bytes_, 9)[2:-4]
 
+    def __repr__(self) -> str:
+        return Cache.fromdict(d=self.__string).__repr__()
+
+    @cache_function_result
     async def send(self):
         async with aiohttp.ClientSession() as client_session:
             res = await client_session.post(self.backend, data=self.request)
@@ -93,3 +100,6 @@ class Tio:
             data = data.replace(data[:16], "")
 
             return data
+
+
+# TODO: Caching, Timeout, Rate Limiting, Logging

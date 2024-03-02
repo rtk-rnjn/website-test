@@ -12,3 +12,4 @@ pymongo
 email-validator
 Flask-WTF
 dnspython
+lru-dict
