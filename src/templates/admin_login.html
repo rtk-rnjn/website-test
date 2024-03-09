@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% from "footer.html" import footer %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+
+<section class="intro vh-100">
+    <div class="mask d-flex align-items-center h-100" style="background-color: #D6D6D6;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card" style="border-radius: 1rem;">
+                        <div class="card-body p-5">
+                            <div class="my-md-4 pb-1">
+                                <h1 class="fw-bold mb-3 text-center">Admin Page</h1>
+                                <div class="text-center mb-3 fs-1">
+                                    <i class="bi bi-person-circle fs-1-xlg"></i>
+                                </div>
+
+                                <form method="POST" action="{{ url_for('admin_login') }}">
+                                    {{ form.csrf_token }}
+                                    {% set class = "form-control form-control-lg" %}
+                                    <div class="form-outline mb-4">
+                                        {{ form.email.label }}
+                                        {% for error in form.email.errors %}
+                                        <p class="text-danger">{{ error }}</p>
+                                        {% endfor %}
+                                        {{ form.email(class=class) }}
+                                    </div>
+
+                                    <div class="form-outline mb-5">
+                                        {{ form.password.label }}
+                                        {% for error in form.password.errors %}
+                                        <p class="text-danger">{{ error }}</p>
+                                        {% endfor %}
+                                        {{ form.password(class=class) }}
+                                    </div>
+
+                                    <div class="text-center">
+                                        {{ form.login(class="btn border btn-lg btn-rounded px-5") }}
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let email = document.getElementById('email');
+    email.setAttribute('readonly', true);
+    email.value = `admin@admin.com`;
+</script>
+{% endblock %}

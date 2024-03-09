@@ -4,8 +4,11 @@ from src import app, csrf
 from src.utils.tio import Tio, parse_output
 
 
-@app.route("/api/tio", methods=["POST"])
+@app.route("/api/tio", methods=["POST", "GET"])
 async def tio():
+    if request.method == "GET":
+        return "GET method not allowed", 401
+
     lang: str = request.get_json().get("language", "")
     code: str = request.get_json().get("code", "")
 
