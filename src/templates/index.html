@@ -8,6 +8,30 @@
 {% from "front_interview.html" import front_interview %}
 {% from "front_why_us.html" import front_why_us %}
 
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
+<style>
+    .suggestion-container {
+        position: relative;
+    }
+
+    .suggestions {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 150px;
+        overflow-y: auto;
+        display: none;
+    }
+
+    .suggestions div {
+        padding: 8px;
+        cursor: pointer;
+    }
+</style>
+{% endblock %}
+
 {% block body %}
 {{ navbar() }}
 
@@ -19,7 +43,9 @@
                 <p class="fs-6 pb-4" style="font-family: 'Roboto', sans-serif;">
                     Build a unique skillset based on your natural talents and watch your career and life flourish.
                 </p>
-                <button class="btn btn-dark btn-lg border border-light" type="button"><i class="fa-brands fa-apple"></i>Sign up</button>
+                <button class="btn btn-dark btn-lg border border-light" type="button" onclick="window.location.href = `{{ url_for('register') }}`;">
+                    <i class="fa-brands fa-apple"></i>Sign up
+                </button>
             </div>
             <div class="col-lg-6 img-tg ">
                 <img class="title-img pt-7p position-absolute" src="{{ url_for('static', filename='images/study.png') }}" alt="study-img" style="max-width: 500px;">
@@ -56,4 +82,107 @@
 <br>
 
 {{ footer() }}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var searchableElements = Array.from(document.getElementsByClassName("searchable"));
+    var fuse = new Fuse(searchableElements, {
+        keys: ['innerText'],
+        includeScore: true,
+        shouldSort: true,
+        threshold: 0.6
+    });
+
+    function showSuggestions(input) {
+        var suggestionsContainer = document.getElementById("suggestions-container");
+        suggestionsContainer.innerHTML = '';
+
+        if (input.value.trim() === '') {
+            suggestionsContainer.style.display = 'none';
+            return;
+        }
+
+        var searchResults = fuse.search(input.value);
+
+        if (searchResults.length > 0) {
+            suggestionsContainer.style.display = 'block';
+            searchResults.forEach(function (result, index) {
+                var suggestion = document.createElement('div');
+                suggestion.innerText = result.item.innerText;
+
+                suggestion.onclick = function () {
+                    input.value = result.item.innerText;
+                    suggestionsContainer.style.display = 'none';
+                };
+
+                suggestion.onmouseover = function () {
+                    setSuggestionSelected(index);
+                };
+
+                suggestionsContainer.appendChild(suggestion);
+            });
+
+            // Highlight the first suggestion by default
+            setSuggestionSelected(0);
+        } else {
+            suggestionsContainer.style.display = 'none';
+        }
+    }
+
+    function setSuggestionSelected(index) {
+        var suggestions = document.querySelectorAll('.suggestions div');
+        suggestions.forEach(function (suggestion, i) {
+            if (i === index) {
+                suggestion.classList.add('suggestion-selected');
+            } else {
+                suggestion.classList.remove('suggestion-selected');
+            }
+        });
+    }
+
+    function handleKeyPress(event) {
+        var suggestionsContainer = document.getElementById("suggestions-container");
+        var suggestions = document.querySelectorAll('.suggestions div');
+
+        if (suggestionsContainer.style.display === 'block') {
+            if (event.key === 'ArrowDown') {
+                event.preventDefault();
+                var selectedIndex = getSelectedSuggestionIndex();
+                setSuggestionSelected((selectedIndex + 1) % suggestions.length);
+            } else if (event.key === 'ArrowUp') {
+                event.preventDefault();
+                var selectedIndex = getSelectedSuggestionIndex();
+                setSuggestionSelected((selectedIndex - 1 + suggestions.length) % suggestions.length);
+            } else if (event.key === 'Enter') {
+                var selectedIndex = getSelectedSuggestionIndex();
+                if (selectedIndex !== -1) {
+                    var selectedSuggestion = suggestions[selectedIndex];
+                    input.value = selectedSuggestion.innerText;
+                    suggestionsContainer.style.display = 'none';
+                }
+            }
+        }
+    }
+
+    function getSelectedSuggestionIndex() {
+        var suggestions = document.querySelectorAll('.suggestions div');
+        for (var i = 0; i < suggestions.length; i++) {
+            if (suggestions[i].classList.contains('suggestion-selected')) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    document.addEventListener('click', function (event) {
+        var suggestionsContainer = document.getElementById("suggestions-container");
+        var input = document.querySelector('.form-control');
+
+        if (event.target !== input && !suggestionsContainer.contains(event.target)) {
+            suggestionsContainer.style.display = 'none';
+        }
+    });
+</script>
 {% endblock %}

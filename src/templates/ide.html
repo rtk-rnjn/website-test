@@ -136,6 +136,7 @@
 
     document.getElementById('run-code').addEventListener('click', function () {
         document.getElementById('output').value = 'Executing...';
+        document.getElementById('system-output').value = 'Loading metadata...';
         let code = editor.getValue();
         let language = selectedValue;
 

@@ -23,7 +23,8 @@ def login():
         if check_password_hash(password_hash, form.password.data):
             user = User()
             user.email = email
-            login_user(user)
+            login_user(user, remember=True)
+
             return redirect(url_for("protected"))
 
         return "<h1>Invalid email or password</h1>"
@@ -34,7 +35,9 @@ def login():
 @app.route("/protected")
 @login_required
 def protected():
-    assert current_user.is_authenticated # This is a proxy for the login_required decorator
+    assert (
+        current_user.is_authenticated
+    )  # This is a proxy for the login_required decorator
     assert isinstance(current_user, User)
 
     return "Logged in as: " + current_user.email
