@@ -4,64 +4,68 @@
 
 {% block body %}
 {{ navbar() }}
-<div class="row">
-    <div class="col-9">
-        <div class="container m-2 p-2 fs-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, rem.
+<div class="row bg-dark">
+    <div class="col-9 ">
+        <div class="container mt-4 p-2 fs-6">
+            <h3 class = "border border-light rounded rounded-2 text-center text-white p-1">Quiz Title</h3>
         </div>
     </div>
     <div class="col-3">
-        <div class="container m-2 p-2 fs-6">
-            time
+        <div class="container mt-4 p-2 fs-6">
+            <h5 class = "border border-light rounded rounded-4 px-4 text-white p-1">Time :</h5>
         </div>
     </div>
 </div>
 <div class="row">
-    <div class="col-9 overflow-scroll vh-100 border border border-dark">
+    <div class="col-9 overflow-scroll vh-100 border border border-dark bg-dark">
         {% for item in questions['questions'] %}
-        <div class="border-dark border mb-3 mt-3 ms-2">
+        <div class="border-light border mb-3 mt-3 ms-2 bg-dark text-white rounded-4">
             <div class="row">
                 <div class="col">
-                    <div class="container m-3 fs-4 d-flex">
+                    <div class="container m-3 fs-4 d-flex ">
                         {% set index = loop.index %}
                         <span class="m-3"><b>Question {{ index }}.</b></span>
                         <span class="m-3">{{ item.question }}</span>
                     </div>
+                    <div class="container m-3 fs-4 d-flex ">
+                        <span class="m-3"><b>Options:</b></span>
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col ms-5">
                     <div class="container pb-4">
                         {% for option in item.options %}
                         {% set _index = loop.index - 1 %}
                         {% set i = _index | string %}
-                        <input class="m-3 p-3" type="radio" name="question{{ index }}" value="{{ option[i] }}"> <label for="question{{ index }}" class="fs-5">
+                        <input class="m-3 p-3 " type="radio" name="question{{ index }}" value="{{ option[i] }}"> <label for="question{{ index }}" class="fs-5">
                             {{ option[i] }}
                         </label>
                         <br>
                         {% endfor %}
+                    </div>
+                    <div class="container fs-4 d-flex m-4">
+                        <button class=" w-25 btn btn-info bg-dark rounded rounded-2 border border-white text-white">Clear my response</button>
                     </div>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
-    <div class="col-3 p-3 border border-dark">
-        <div class="container text-center">
-            <div class="mb-3 fs-5">All Questions</div>
+    <div class="col-3 p-3 border border-dark bg-dark text-white">
+        <div class="container text-center ">
+            <div class="mb-3 fs-5 border border-white rounded rounded-4 p-1">All Questions</div>
             <div class="row">
                 {% for item in questions['questions'] %}
-                <div class="col-2 mb-2">
-                    <button class="btn border border-1">{{ loop.index }}</button>
+                <div class="col-2 mb-2 m-3">
+                    <button class="btn border border-1 text-white ">{{ loop.index }}</button>
                 </div>
                 {% endfor %}
             </div>
+            <div class=" align-items-center text-center pt-3">
+                <button class=" mt-5 w-75 btn btn-success rounded rounded-2 border border-white">Next</button>
         </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-12 fs-6">
-        content
+        </div>
     </div>
 </div>
 
