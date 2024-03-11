@@ -5,7 +5,7 @@ from functools import partial
 
 import aiohttp
 
-from src.utils.caching import cache_function_result, Cache
+from src.utils.caching import Cache, cache_function_result
 
 to_bytes = partial(bytes, encoding="utf-8")
 

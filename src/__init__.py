@@ -27,7 +27,9 @@ mongo_port = int(os.getenv("MONGO_PORT", "27017"))
 if mongo_uri := os.getenv("MONGO_URI"):
     mongo_client = MongoClient(mongo_uri, document_class=dict, tz_aware=True)
 else:
-    mongo_client = MongoClient(mongo_host, mongo_port, document_class=dict, tz_aware=True)
+    mongo_client = MongoClient(
+        mongo_host, mongo_port, document_class=dict, tz_aware=True
+    )
 
 setattr(app, "mongo", mongo_client)
 

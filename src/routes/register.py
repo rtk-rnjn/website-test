@@ -13,7 +13,7 @@ def register():
     if form.validate_on_submit():
         mongo = app.mongo
 
-        db = mongo["usersDatabase"]
+        db = mongo["users_database"]
         email = form.email.data
 
         if db.users.find_one({"email": email}) is not None:

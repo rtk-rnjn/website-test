@@ -21,7 +21,7 @@ def load_user(email: str) -> User | None:
     if admin is not None:
         return admin
 
-    db = app.mongo["usersDatabase"]
+    db = app.mongo["users_database"]
     entity = db.users.find_one({"email": email})
 
     if entity is None:
@@ -41,7 +41,7 @@ def request_loader(request) -> User | None:
     if admin is not None:
         return admin
 
-    db = app.mongo["usersDatabase"]
+    db = app.mongo["users_database"]
     entity = db.users.find_one({"email": email})
 
     if entity is None:

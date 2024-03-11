@@ -17,7 +17,9 @@ class QuestionUploadForm(FlaskForm):
         validators=[
             FileRequired(),
             FileSize(max_size=1 * 1024 * 1024),
-            FileAllowed(["docx", "doc", "txt"], "Only .docx, .doc, and .txt files are allowed"),
+            FileAllowed(
+                ["docx", "doc", "txt"], "Only .docx, .doc, and .txt files are allowed"
+            ),
         ],
     )
     _type = SelectField(

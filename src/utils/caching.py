@@ -1,12 +1,13 @@
 from __future__ import annotations
 
-from typing import Any, Callable, Generic, Iterator, TypeVar, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any, Callable, Generic, Iterator, TypeVar
 
 if TYPE_CHECKING:
     from typing_extensions import Self
 
-from lru import LRU
 from functools import wraps
+
+from lru import LRU
 
 KT = TypeVar("KT")
 VT = TypeVar("VT")
