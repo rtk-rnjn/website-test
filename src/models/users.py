@@ -6,13 +6,20 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from src import app, login_manager
 
 
-@login_manager.user_loader
-def load_user(email: str) -> User | None:
+def _return_admin(email: str) -> User | None:
     if email == "admin@admin.com":
         user = User()
         user.email = email
         user.is_admin = True
+
         return user
+
+
+@login_manager.user_loader
+def load_user(email: str) -> User | None:
+    admin = _return_admin(email)
+    if admin is not None:
+        return admin
 
     db = app.mongo["usersDatabase"]
     entity = db.users.find_one({"email": email})
@@ -30,11 +37,9 @@ def load_user(email: str) -> User | None:
 @login_manager.request_loader
 def request_loader(request) -> User | None:
     email = request.form.get("email")
-    if email == "admin@admin.com":
-        user = User()
-        user.email = email
-        user.is_admin = True
-        return user
+    admin = _return_admin(email)
+    if admin is not None:
+        return admin
 
     db = app.mongo["usersDatabase"]
     entity = db.users.find_one({"email": email})
