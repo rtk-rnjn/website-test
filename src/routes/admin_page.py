@@ -1,6 +1,5 @@
 import json
 
-import pymongo
 from bson import ObjectId
 from flask import render_template, request
 from flask_login import current_user, login_required
@@ -13,25 +12,19 @@ databases = mongo_client.list_database_names()
 dont_capture = ["admin", "config", "local", "users_database"]
 
 databases = [db for db in databases if db not in dont_capture]
-cached_questions = {}
 
 
 @app.route("/admin-page")
 @login_required
 async def admin_page() -> str:
-    if not cached_questions:
-        questions = {
-            db: [col for col in mongo_client[db].list_collection_names()]
-            for db in databases
-        }
-        cached_questions.update(questions)
+    questions = {
+        db: mongo_client[db].list_collection_names()
+        for db in databases
+    }
 
     return render_template(
-        "admin_page.html", user=current_user, cached_questions=cached_questions
+        "admin_page.html", user=current_user, cached_questions=questions
     )
-
-
-cached_count = {}
 
 
 @app.route("/admin-page/<database>/<collection>")
@@ -41,11 +34,10 @@ async def admin_page_db_col(database: str, collection: str) -> str:
     skip = request.args.get("skip", 0)
     limit = request.args.get("limit", 20)
     documents = col.find(
-        {}, limit=int(limit), skip=int(skip), sort=[("quesions", pymongo.ASCENDING)]
+        {}, limit=int(limit), skip=int(skip)
     )
 
-    total_docs = cached_count.get(f"{database}-{collection}", col.count_documents({}))
-    cached_count[f"{database}-{collection}"] = total_docs
+    total_docs = col.count_documents({})
 
     return render_template(
         "admin_page_db_col.html",

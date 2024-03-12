@@ -93,7 +93,7 @@
             <li class="page-item">
                 {% set i_skip = skip|int + 20 %}
                 {% set d_skip = skip|int - 20 %}
-                {% if d_skip < 0 %}{% set d_skip=0 %}{% endif %} <a class="page-link"
+                {% if d_skip < 0 %} {% set d_skip=0 %} {% endif %} <a class="page-link"
                     href="{{ url_for('admin_page_db_col', database=database, collection=collection, skip=d_skip, limit=limit) }}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                     </a>
@@ -114,11 +114,13 @@
 {% block scripts %}
 <script>
     hljs.highlightAll();
+    var editors = [];
+
     document.addEventListener('DOMContentLoaded', function () {
         let i = 1;
 
         while (document.getElementById(`editor-${i}`)) {
-            new Quill(`#editor-${i}`, {
+            let quill = new Quill(`#editor-${i}`, {
                 modules: {
                     syntax: true,
                     toolbar: `#toolbar-container-${i}`,
@@ -126,6 +128,11 @@
                 placeholder: 'Compose an epic...',
                 theme: 'snow',
             });
+            editors.push({
+                index: i,
+                editor: quill,
+            });
+
             new Quill(`#editor-answer-${i}`, {
                 modules: {
                     syntax: true,
@@ -169,8 +176,9 @@
 <script>
     function onUpdateQuestion(database, collection, questionId, editorIndex) {
         let editor = document.getElementById(`editor-${editorIndex}`);
+        let realEditor = editors.find(e => e.index === editorIndex).editor;
 
-        let questionHtml = editor.innerHTML;
+        let questionHtml = realEditor.getSemanticHTML();
         let options = [];
 
         let i = 1;
