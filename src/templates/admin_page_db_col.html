@@ -5,14 +5,10 @@
 {% block head %}
 <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.snow.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -42,6 +38,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Index</th>
+                        <th scope="col">Question ID</th>
                         <th scope="col">Question</th>
                         <th scope="col">Options</th>
                         <th scope="col">Answer</th>
@@ -55,23 +52,29 @@
                             {{ skip|int + loop.index }}
                         </th>
                         <td>
-                            {% set q = document.questions %}
+                            <small>{{ document._id|string }}</small>
+                        </td>
+                        <td>
+                            {% set q = document.q %}
                             {% set outer_index = loop.index %}
                             {{ quill_toolbar(outer_index) }}
                             <div id="editor-{{ outer_index }}">
                                 {{ q | safe }}
                             </div>
+                            <div id="editor-extra-{{ outer_index }}">
+                                {{ document.e | safe }}
+                            </div>
                         </td>
                         <td>
                             <ol>
-                                {% for option in document.options %}
+                                {% for option in document.o %}
                                 <li id="editor-{{ outer_index }}-{{ loop.index }}">{{ option | safe }}</li>
                                 {% endfor %}
                             </ol>
                         </td>
                         <td>
                             <div id="editor-answer-{{ outer_index }}">
-                                {{ document.answer|int }}
+                                {{ document.a|int }}
                             </div>
                         </td>
                         <td class="text-center">
@@ -91,8 +94,8 @@
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             <li class="page-item">
-                {% set i_skip = skip|int + 20 %}
-                {% set d_skip = skip|int - 20 %}
+                {% set i_skip = skip|int + 10 %}
+                {% set d_skip = skip|int - 10 %}
                 {% if d_skip < 0 %} {% set d_skip=0 %} {% endif %} <a class="page-link"
                     href="{{ url_for('admin_page_db_col', database=database, collection=collection, skip=d_skip, limit=limit) }}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
@@ -118,14 +121,19 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         let i = 1;
-
+        const options = {
+            modules: {
+                toolbar: false,
+                syntax: true,
+            },
+            theme: 'snow',
+        }
         while (document.getElementById(`editor-${i}`)) {
             let quill = new Quill(`#editor-${i}`, {
                 modules: {
-                    syntax: true,
                     toolbar: `#toolbar-container-${i}`,
+                    syntax: true,
                 },
-                placeholder: 'Compose an epic...',
                 theme: 'snow',
             });
             editors.push({
@@ -133,25 +141,13 @@
                 editor: quill,
             });
 
-            new Quill(`#editor-answer-${i}`, {
-                modules: {
-                    syntax: true,
-                    toolbar: false,
-                },
-                placeholder: 'Compose an epic...',
-                theme: 'snow',
-            });
+            new Quill(`#editor-extra-${i}`, options);
+
+            new Quill(`#editor-answer-${i}`, options);
 
             let j = 1;
             while (document.getElementById(`editor-${i}-${j}`)) {
-                new Quill(`#editor-${i}-${j}`, {
-                    modules: {
-                        syntax: true,
-                        toolbar: false,
-                    },
-                    placeholder: 'Compose an epic...',
-                    theme: 'snow',
-                });
+                new Quill(`#editor-${i}-${j}`, options);
                 j++;
             }
             i++;
@@ -176,6 +172,7 @@
 <script>
     function onUpdateQuestion(database, collection, questionId, editorIndex) {
         let editor = document.getElementById(`editor-${editorIndex}`);
+        let editorExtra = document.getElementById(`editor-extra-${editorIndex}`);
         let realEditor = editors.find(e => e.index === editorIndex).editor;
 
         let questionHtml = realEditor.getSemanticHTML();
@@ -192,9 +189,10 @@
         let answer = answerEditor.textContent;
 
         let object = {
-            question: questionHtml,
-            options: options,
-            answer: answer,
+            q: questionHtml,
+            o: options,
+            a: answer,
+            e: editorExtra.innerHTML,
         };
 
         let uri = `/admin-page/${database}/${collection}/${questionId}/update`;
@@ -212,4 +210,5 @@
         });
     }
 </script>
+
 {% endblock %}

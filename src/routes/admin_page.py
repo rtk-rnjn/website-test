@@ -17,10 +17,7 @@ databases = [db for db in databases if db not in dont_capture]
 @app.route("/admin-page")
 @login_required
 async def admin_page() -> str:
-    questions = {
-        db: mongo_client[db].list_collection_names()
-        for db in databases
-    }
+    questions = {db: mongo_client[db].list_collection_names() for db in databases}
 
     return render_template(
         "admin_page.html", user=current_user, cached_questions=questions
@@ -32,10 +29,8 @@ async def admin_page() -> str:
 async def admin_page_db_col(database: str, collection: str) -> str:
     col = mongo_client[database][collection]
     skip = request.args.get("skip", 0)
-    limit = request.args.get("limit", 20)
-    documents = col.find(
-        {}, limit=int(limit), skip=int(skip)
-    )
+    limit = request.args.get("limit", 10)
+    documents = col.find({}, limit=int(limit), skip=int(skip))
 
     total_docs = col.count_documents({})
 
@@ -71,10 +66,8 @@ async def admin_page_db_col_delete(
         )
 
     if request.method == "DELETE":
-        print("Deleted")
-
-    # col.delete_one({"_id": ObjectId(question_id)})
-    return
+        col.delete_one({"_id": ObjectId(question_id)})
+    return ""
 
 
 @app.route(
@@ -95,19 +88,20 @@ async def admin_page_db_col_update(
     if request.method == "PATCH":
         json_object = request.data
         if json_object is None:
-            return
+            return ""
         json_data = json.loads(json_object)
-        print(json_data)
 
         payload = {
-            "questions": json_data["question"],
-            "options": json_data["options"],
-            "answer": json_data["answer"],
+            "q": json_data["q"],
+            "o": json_data["o"],
+            "a": json_data["a"],
+            "e": json_data["e"],
         }
 
-        print(payload)
-        # col.update_one({"_id": question_id}, {"$set": payload})
-    return
+        updated = col.update_one({"_id": ObjectId(question_id)}, {"$set": payload})
+        if updated.upserted_id:
+            return "Updated"
+    return ""
 
 
 csrf.exempt(admin_page_db_col_update)
