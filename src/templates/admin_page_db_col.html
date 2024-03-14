@@ -78,10 +78,16 @@
                             </div>
                         </td>
                         <td class="text-center">
-                            <button class="btn btn-primary"
+                            <button class="btn btn-primary mb-1"
                                 onclick="onUpdateQuestion('{{ database }}', '{{ collection }}', '{{ document._id|string }}', {{ outer_index }})">Update</button>
                             <br>
-                            <button class="btn btn-danger" onclick="onDeleteQuestion('{{ database }}', '{{ collection }}', '{{ document._id|string }}')">Delete</button>
+                            <button class="btn btn-danger mb-1" onclick="onDeleteQuestion('{{ database }}', '{{ collection }}', '{{ document._id|string }}')">Delete</button>
+                            <br>
+                            <p>Level: </p>
+                            <input type="radio" id="level-1" name="level-1" value="1">
+                            <label for="level-1">1</label>
+                            <input type="radio" id="level-2" name="level-2" value="2">
+                            <label for="level-2">2</label>
                         </td>
                     </tr>
                     {% endfor %}
@@ -188,11 +194,15 @@
         let answerEditor = document.querySelector(`#editor-answer-${editorIndex}`);
         let answer = answerEditor.textContent;
 
+        let level = document.querySelector(`input[name="level-${editorIndex}"]:checked`).value;
+        level = parseInt(level);
+
         let object = {
             q: questionHtml,
             o: options,
             a: answer,
             e: editorExtra.innerHTML,
+            l: level,
         };
 
         let uri = `/admin-page/${database}/${collection}/${questionId}/update`;
@@ -205,7 +215,7 @@
             }
         }).then(response => {
             if (response.ok) {
-                location.reload();
+                alert("Question updated successfully");
             }
         });
     }

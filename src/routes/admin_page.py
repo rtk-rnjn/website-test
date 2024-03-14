@@ -96,6 +96,7 @@ async def admin_page_db_col_update(
             "o": json_data["o"],
             "a": json_data["a"],
             "e": json_data["e"],
+            "l": json_data["l"],
         }
 
         updated = col.update_one({"_id": ObjectId(question_id)}, {"$set": payload})
