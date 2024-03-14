@@ -1,87 +1,74 @@
 {% extends "base.html" %}
 {% from "footer.html" import footer %}
-
-{% block head %}
-{% endblock %}
-
+{% block head %}{% endblock %}
 {% block body %}
-
-<section class="intro vh-100">
-    <div class="mask d-flex align-items-center h-100" style="background-color: #D6D6D6;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card" style="border-radius: 1rem;">
-                        <div class="card-body p-5">
-                            <div class="my-md-4 pb-1">
-                                <h1 class="fw-bold mb-3 text-center">Register Now!</h1>
-                                <div class="text-center mb-3 fs-1">
-                                    <i class="bi bi-person-circle fs-1-xlg"></i>
+    <section class="intro vh-100">
+        <div class="mask d-flex align-items-center h-100"
+             style="background-color: #D6D6D6">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card" style="border-radius: 1rem;">
+                            <div class="card-body p-5">
+                                <div class="my-md-4 pb-1">
+                                    <h1 class="fw-bold mb-3 text-center">Register Now!</h1>
+                                    <div class="text-center mb-3 fs-1">
+                                        <i class="bi bi-person-circle fs-1-xlg"></i>
+                                    </div>
+                                    {% if error %}
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            {{ error }}
+                                            <button type="button"
+                                                    class="btn-close"
+                                                    data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
+                                        </div>
+                                    {% endif %}
+                                    {% if message %}
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            {{ message }}
+                                            <button type="button"
+                                                    class="btn-close"
+                                                    data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
+                                        </div>
+                                    {% endif %}
+                                    <form method="POST" action="{{ url_for("register") }}">
+                                        {{ form.csrf_token }}
+                                        {% set class = "form-control form-control-lg" %}
+                                        <div class="form-outline mb-4">
+                                            {{ form.fullname.label }}
+                                            {% for error in form.fullname.errors %}<p class="text-danger">{{ error }}</p>{% endfor %}
+                                            {{ form.fullname(class=class) }}
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            {{ form.email.label }}
+                                            {% for error in form.email.errors %}<p class="text-danger">{{ error }}</p>{% endfor %}
+                                            {{ form.email(class=class) }}
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            {{ form.password.label }}
+                                            {% for error in form.password.errors %}<p class="text-danger">{{ error }}</p>{% endfor %}
+                                            {{ form.password(class=class) }}
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            {{ form.confirm_password.label }}
+                                            {% for error in form.confirm_password.errors %}<p class="text-danger">{{ error }}</p>{% endfor %}
+                                            {{ form.confirm_password(class=class) }}
+                                        </div>
+                                        <div class="text-center">{{ form.register(class="btn border btn-lg btn-rounded px-5") }}</div>
+                                    </form>
                                 </div>
-                                
-                                {% if error %}
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ error }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <div class="text-center">
+                                    <p class="mb-0">
+                                        Already have an account? <a href="{{ url_for("login") }}" class="text-body fw-bold">Login</a>
+                                    </p>
                                 </div>
-                                {% endif %}
-
-                                {% if message %}
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    {{ message }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                                {% endif %}
-
-                                <form method="POST" action="{{ url_for('register') }}">
-                                    {{ form.csrf_token }}
-                                    {% set class = "form-control form-control-lg" %}
-                                    <div class="form-outline mb-4">
-                                        {{ form.fullname.label }}
-                                        {% for error in form.fullname.errors %}
-                                        <p class="text-danger">{{ error }}</p>
-                                        {% endfor %}
-                                        {{ form.fullname(class=class) }}
-                                    </div>
-
-                                    <div class="form-outline mb-4">
-                                        {{ form.email.label }}
-                                        {% for error in form.email.errors %}
-                                        <p class="text-danger">{{ error }}</p>
-                                        {% endfor %}
-                                        {{ form.email(class=class) }}
-                                    </div>
-
-                                    <div class="form-outline mb-4">
-                                        {{ form.password.label }}
-                                        {% for error in form.password.errors %}
-                                        <p class="text-danger">{{ error }}</p>
-                                        {% endfor %}
-                                        {{ form.password(class=class) }}
-                                    </div>
-
-                                    <div class="form-outline mb-4">
-                                        {{ form.confirm_password.label }}
-                                        {% for error in form.confirm_password.errors %}
-                                        <p class="text-danger">{{ error }}</p>
-                                        {% endfor %}
-                                        {{ form.confirm_password(class=class) }}
-                                    </div>
-
-                                    <div class="text-center">
-                                        {{ form.register(class="btn border btn-lg btn-rounded px-5") }}
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="text-center">
-                                <p class="mb-0">Already have an account? <a href="{{ url_for('login') }}" class="text-body fw-bold">Login</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 {% endblock %}

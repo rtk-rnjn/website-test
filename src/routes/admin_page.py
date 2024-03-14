@@ -3,7 +3,7 @@ import json
 from bson import ObjectId
 from flask import render_template, request
 from flask_login import current_user, login_required
-
+from typing import cast
 from src import app, csrf
 
 mongo_client = app.mongo
@@ -59,7 +59,7 @@ async def admin_page_db_col_delete(
 ) -> str:
     col = mongo_client[database][collection]
     if request.method == "GET":
-        document = col.find_one({"_id": ObjectId(question_id)}, {"_id": 0})
+        document: dict = cast(dict, col.find_one({"_id": ObjectId(question_id)}, {"_id": 0}))
 
         return (
             "Method GET not allowed\n" + f"<pre>{json.dumps(document, indent=4)}</pre>"
@@ -90,13 +90,13 @@ async def admin_page_db_col_update(
         if json_object is None:
             return ""
         json_data = json.loads(json_object)
-
         payload = {
             "q": json_data["q"],
             "o": json_data["o"],
             "a": json_data["a"],
             "e": json_data["e"],
             "l": json_data["l"],
+            "t": json_data["t"],
         }
 
         updated = col.update_one({"_id": ObjectId(question_id)}, {"$set": payload})

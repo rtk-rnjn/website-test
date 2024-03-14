@@ -1,54 +1,79 @@
 {% macro navbar() -%}
-<header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('index') }}">Placement Preparation</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbarDropdownTechnical" aria-expanded="false">
-                            Technical
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownTechnical">
-                            <li><a class="dropdown-item" href="#">Programming MCQ(s)</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbarDropdownNonTechnical" aria-expanded="false">
-                            Non-Technical
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownNonTechnical">
-                            <li><a class="dropdown-item" href="#">Aptitude</a></li>
-                            <li><a class="dropdown-item" href="#">Reasoning</a></li>
-                            <li><a class="dropdown-item" href="#">Verbal</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbarDropdownResources" aria-expanded="false">
-                            Resources
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownResources">
-                            <li><a class="dropdown-item" href="{{ url_for('universal_ide') }}">IDE</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-                <form class="d-flex" role="search">
-                    <div class="suggestion-container">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" oninput="showSuggestions(this)">
-                        <div class="form-control suggestions text-muted" id="suggestions-container"></div>
-                    </div>
-                    <button class="btn btn-outline-primary white-text" type="submit">Search</button>
-                </form>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url_for("index") }}">Placement Preparation</a>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               id="navbarDropdownTechnical"
+                               aria-expanded="false">Technical</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownTechnical">
+                                <li>
+                                    <a class="dropdown-item" href="#">Programming MCQ(s)</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               id="navbarDropdownNonTechnical"
+                               aria-expanded="false">Non-Technical</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownNonTechnical">
+                                <li>
+                                    <a class="dropdown-item" href="#">Aptitude</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Reasoning</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Verbal</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               id="navbarDropdownResources"
+                               aria-expanded="false">Resources</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownResources">
+                                <li>
+                                    <a class="dropdown-item" href="{{ url_for("universal_ide") }}">IDE</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <div class="suggestion-container">
+                            <input class="form-control me-2"
+                                   type="search"
+                                   placeholder="Search"
+                                   aria-label="Search"
+                                   oninput="showSuggestions(this)">
+                            <div class="form-control suggestions text-muted"
+                                 id="suggestions-container"></div>
+                        </div>
+                        <button class="btn btn-outline-primary white-text" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 {%- endmacro %}

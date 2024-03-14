@@ -1,27 +1,24 @@
 {% extends "base.html" %}
 {% from "footer.html" import footer %}
-
 {% block head %}
-<link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.snow.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.snow.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 {% endblock %}
-
 {% block body %}
-<div class="container">
-    {% for db, data in cached_questions | dictsort %}
-    <ul class="list-group mt-2">
-        <li class="list-group-item active">{{ db.replace("_", " ").upper() }}</li>
-        {% for collection in data %}
-        <li class="list-group-item">
-            <a href="{{ url_for('admin_page_db_col', database=db, collection=collection) }}">{{ collection.replace("_", " ").upper() }}</a>
-        </li>
+    <div class="container">
+        {% for db, data in cached_questions | dictsort %}
+            <ul class="list-group mt-2">
+                <li class="list-group-item active">{{ db.replace('_', ' ').upper() }}</li>
+                {% for collection in data %}
+                    <li class="list-group-item">
+                        <a href="{{ url_for('admin_page_db_col', database=db, collection=collection) }}">{{ collection.replace('_', ' ').upper() }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
         {% endfor %}
-    </ul>
-    {% endfor %}
-</div>
+    </div>
 {% endblock %}

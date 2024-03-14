@@ -1,45 +1,50 @@
 {% macro language_dropdown() -%}
-<div class="dropdown">
-    <button class="btn border border-1 dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-        Select Language
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-        <li>
-            <label class="dropdown-item" for="c-gcc">
-                <input type="radio" name="language" id="c-gcc" value="c-gcc">
-                <i class="devicon-c-plain"> C</i>
-            </label>
-        </li>
-        <li>
-            <label class="dropdown-item" for="cpp-gcc">
-                <input type="radio" name="language" id="cpp-gcc" value="cpp-gcc">
-                <i class="devicon-cplusplus-plain"> C++</i>
-            </label>
-        </li>
-        <li>
-            <label class="dropdown-item" for="cs-core">
-                <input type="radio" name="language" id="cs-core" value="cs-core">
-                <i class="devicon-csharp-plain"> C#</i>
-            </label>
-        </li>
-        <li>
-            <label class="dropdown-item" for="java-jdk">
-                <input type="radio" name="language" id="java-jdk" value="java-jdk">
-                <i class="devicon-java-plain"> Java</i>
-            </label>
-        </li>
-        <li>
-            <label class="dropdown-item" for="javascript-node">
-                <input type="radio" name="language" id="javascript-node" value="javascript-node">
-                <i class="devicon-javascript-plain"> Javascript</i>
-            </label>
-        </li>
-        <li>
-            <label class="dropdown-item" for="python3">
-                <input type="radio" name="language" id="python3" value="python3">
-                <i class="devicon-python-plain"> Python3</i>
-            </label>
-        </li>
-    </ul>
-</div>
+    <div class="dropdown">
+        <button class="btn border border-1 dropdown-toggle"
+                type="button"
+                id="languageDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">Select Language</button>
+        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+            <li>
+                <label class="dropdown-item" for="c-gcc">
+                    <input type="radio" name="language" id="c-gcc" value="c-gcc">
+                    <i class="devicon-c-plain"> C</i>
+                </label>
+            </li>
+            <li>
+                <label class="dropdown-item" for="cpp-gcc">
+                    <input type="radio" name="language" id="cpp-gcc" value="cpp-gcc">
+                    <i class="devicon-cplusplus-plain"> C++</i>
+                </label>
+            </li>
+            <li>
+                <label class="dropdown-item" for="cs-core">
+                    <input type="radio" name="language" id="cs-core" value="cs-core">
+                    <i class="devicon-csharp-plain"> C#</i>
+                </label>
+            </li>
+            <li>
+                <label class="dropdown-item" for="java-jdk">
+                    <input type="radio" name="language" id="java-jdk" value="java-jdk">
+                    <i class="devicon-java-plain"> Java</i>
+                </label>
+            </li>
+            <li>
+                <label class="dropdown-item" for="javascript-node">
+                    <input type="radio"
+                           name="language"
+                           id="javascript-node"
+                           value="javascript-node">
+                    <i class="devicon-javascript-plain"> Javascript</i>
+                </label>
+            </li>
+            <li>
+                <label class="dropdown-item" for="python3">
+                    <input type="radio" name="language" id="python3" value="python3">
+                    <i class="devicon-python-plain"> Python3</i>
+                </label>
+            </li>
+        </ul>
+    </div>
 {%- endmacro %}
