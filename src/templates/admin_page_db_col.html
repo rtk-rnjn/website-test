@@ -87,13 +87,16 @@
                                     </button>
                                     <br>
                                     <div class="form-group">
-                                        <label for="level-control-{{ outer_index }}">Level Select</label>
-                                        <select class="form-control" id="level-control-{{ outer_index }}">
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                        </select>
+                                        <div class = "mt-2 fs-6">
+                                            <input type="radio" name="drone" value="level1" checked />
+                                            <label for="level2">Level 1</label>
+                                        </div>
+                                        <div class = "mt-2 fs-6">
+                                            <input type="radio"name="drone" value="level2" />
+                                            <label for="level2">Level 2</label>
+                                        </div>
                                     </div>
+                                    
                                 </td>
                             </tr>
                         {% endfor %}
