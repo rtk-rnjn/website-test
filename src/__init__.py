@@ -9,6 +9,8 @@ from flask import Flask
 from flask_wtf.csrf import CSRFProtect
 from pymongo import MongoClient
 
+from src.utils.logger import log
+
 if TYPE_CHECKING:
     from src.utils.types import FlaskClass
 else:
@@ -36,10 +38,11 @@ else:
         tz_aware=True,
     )
 
-with sqlite3.connect("logs.sqlite") as sql:
+with sqlite3.connect("logs.sqlite", check_same_thread=False) as sql:
     app.sql = sql
 
 app.mongo = mongo_client
+app.log = log
 
 # ping to check if the connection is successful
 try:
