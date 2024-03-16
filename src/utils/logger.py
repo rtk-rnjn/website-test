@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+import functools
 import logging
 import logging.handlers
+import sqlite3
+from datetime import datetime
 
 from colorama import Fore
 
@@ -47,3 +50,70 @@ class CustomFormatter(logging.Formatter):
         log_fmt = self.formats.get(record.levelno)
         formatter = logging.Formatter(log_fmt, DT_FMT)
         return formatter.format(record)
+
+
+_log = logging.getLogger("")
+_log.setLevel(logging.DEBUG)
+file_handler = handler("logs.log")
+file_handler.setLevel(logging.DEBUG)
+file_handler_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s", DT_FMT)
+file_handler.setFormatter(file_handler_formatter)
+
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.DEBUG)
+stream_handler.setFormatter(CustomFormatter())
+
+_log.addHandler(stream_handler)
+_log.addHandler(file_handler)
+
+
+def auto_commit_deco(func):
+    @functools.wraps(func)
+    def wrapper(self, *args, **kwargs):
+        try:
+            return func(self, *args, **kwargs)
+        finally:
+            self.sql.commit()
+
+    return wrapper
+
+
+class _Logger:
+    def __init__(self, con: sqlite3.Connection, logger: logging.Logger) -> None:
+        self.__query = """INSERT INTO LOGS (log_level, log_message, log_created_at) VALUES ('{}', ?, %s)""" % (
+            datetime.now().strftime("'%Y-%m-%d %H:%M:%S'")
+        )
+        self.__sql = con
+        self.__logger = logger
+
+    @property
+    def sql(self) -> sqlite3.Connection:
+        return self.__sql
+
+    @auto_commit_deco
+    def info(self, msg: str, *args, **kwargs) -> None:
+        self.__logger.info(msg, *args, **kwargs)
+        self.__sql.execute(self.__query.format("INFO"), (msg,))
+
+    @auto_commit_deco
+    def debug(self, msg: str, *args, **kwargs) -> None:
+        self.__logger.debug(msg, *args, **kwargs)
+        self.__sql.execute(self.__query.format("DEBUG"), (msg,))
+
+    @auto_commit_deco
+    def warning(self, msg: str, *args, **kwargs) -> None:
+        self.__logger.warning(msg, *args, **kwargs)
+        self.__sql.execute(self.__query.format("WARNING"), (msg,))
+
+    @auto_commit_deco
+    def error(self, msg: str, *args, **kwargs) -> None:
+        self.__logger.error(msg, *args, **kwargs)
+        self.__sql.execute(self.__query.format("ERROR"), (msg,))
+
+    @auto_commit_deco
+    def critical(self, msg: str, *args, **kwargs) -> None:
+        self.__logger.critical(msg, *args, **kwargs)
+        self.__sql.execute(self.__query.format("CRITICAL"), (msg,))
+
+
+log = _Logger(sqlite3.connect("logs.sqlite"), _log)

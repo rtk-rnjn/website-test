@@ -24,6 +24,8 @@ def register():
                 error="User already exists",
             )
 
+        assert form.password.data
+
         password_hash = generate_password_hash(form.password.data)
         fullname = form.fullname.data
 

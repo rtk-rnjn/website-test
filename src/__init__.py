@@ -1,4 +1,6 @@
 import os
+import pathlib
+import sqlite3
 from typing import TYPE_CHECKING
 
 import flask_login
@@ -34,6 +36,9 @@ else:
         tz_aware=True,
     )
 
+with sqlite3.connect("logs.sqlite") as sql:
+    app.sql = sql
+
 app.mongo = mongo_client
 
 # ping to check if the connection is successful
@@ -41,9 +46,12 @@ try:
     response = mongo_client.admin.command("ping")
     ok = response["ok"]
     if int(ok) != 1:
-        raise Exception("MongoDB connection failed")
-
+        msg = "MongoDB connection failed"
+        raise RuntimeError(msg)
 except Exception as e:
     raise e
+
+_sql_script = pathlib.Path("sql.sql").read_text()
+app.sql.executescript(_sql_script)
 
 from .routes import *  # noqa: F401, F403, E402

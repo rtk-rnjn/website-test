@@ -1,0 +1,97 @@
+[37m 2024-03-17 01:08:30 [37m - [33m root [37m - [32m INFO [37m - [34m Starting server [37m ([36mlogger.py/logger.info[33m:[32m84[37m)[39m
+[37m 2024-03-17 01:12:33 [37m - [33m root [37m - [32m INFO [37m - [34m Starting server [37m ([36mlogger.py/logger.info[33m:[32m85[37m)[39m
+[37m 2024-03-17 01:13:43 [37m - [33m root [37m - [32m INFO [37m - [34m Starting server [37m ([36mlogger.py/logger.info[33m:[32m85[37m)[39m
+[37m 2024-03-17 01:14:41 [37m - [33m root [37m - [32m INFO [37m - [34m Starting server [37m ([36mlogger.py/logger.info[33m:[32m85[37m)[39m
+[37m 2024-03-17 01:14:41 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.0.149:8000 [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:14:41 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m [33mPress CTRL+C to quit[0m [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:14:41 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m  * Restarting with stat [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:14:52 [37m - [33m root [37m - [32m INFO [37m - [34m Starting server [37m ([36mlogger.py/logger.info[33m:[32m85[37m)[39m
+[37m 2024-03-17 01:14:52 [37m - [33m werkzeug [37m - [33m WARNING [37m - [34m  * Debugger is active! [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:14:52 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m  * Debugger PIN: 383-352-546 [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:15:57 [37m - [33m root [37m - [32m INFO [37m - [34m Starting server [37m ([36mlogger.py/logger.info[33m:[32m87[37m)[39m
+[37m 2024-03-17 01:15:57 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.0.149:8000 [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:15:57 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m [33mPress CTRL+C to quit[0m [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:15:57 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m  * Restarting with stat [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:16:11 [37m - [33m root [37m - [32m INFO [37m - [34m Starting server [37m ([36mlogger.py/logger.info[33m:[32m87[37m)[39m
+[37m 2024-03-17 01:16:11 [37m - [33m werkzeug [37m - [33m WARNING [37m - [34m  * Debugger is active! [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:16:11 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m  * Debugger PIN: 383-352-546 [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:17:19 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m  * Detected change in '/home/rtk-rnjn/website-test/src/utils/logger.py', reloading [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:17:20 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m  * Restarting with stat [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:17:21 [37m - [33m root [37m - [32m INFO [37m - [34m Starting server [37m ([36mlogger.py/logger.info[33m:[32m87[37m)[39m
+[37m 2024-03-17 01:17:43 [37m - [33m root [37m - [32m INFO [37m - [34m Starting server [37m ([36mlogger.py/logger.info[33m:[32m87[37m)[39m
+[37m 2024-03-17 01:17:52 [37m - [33m root [37m - [32m INFO [37m - [34m Starting server [37m ([36mlogger.py/logger.info[33m:[32m87[37m)[39m
+[37m 2024-03-17 01:17:52 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.0.149:8000 [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:17:52 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m [33mPress CTRL+C to quit[0m [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:17:52 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m  * Restarting with stat [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:17:58 [37m - [33m root [37m - [32m INFO [37m - [34m Starting server [37m ([36mlogger.py/logger.info[33m:[32m87[37m)[39m
+[37m 2024-03-17 01:17:58 [37m - [33m werkzeug [37m - [33m WARNING [37m - [34m  * Debugger is active! [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:17:58 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m  * Debugger PIN: 383-352-546 [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:17:58 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:17:58] "GET / HTTP/1.1" 200 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:17:58 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:17:58] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:17:58 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:17:58] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:17:58 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:17:58] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "GET / HTTP/1.1" 200 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "GET / HTTP/1.1" 200 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "GET / HTTP/1.1" 200 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:03 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:03] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:04 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:04] "GET / HTTP/1.1" 200 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:04 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:04] "GET / HTTP/1.1" 200 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:04 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:04] "GET / HTTP/1.1" 200 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:04 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:04] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:04 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:04] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+[37m 2024-03-17 01:18:04 [37m - [33m werkzeug [37m - [32m INFO [37m - [34m 127.0.0.1 - - [17/Mar/2024 01:18:04] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 - [37m ([36m_internal.py/_internal._log[33m:[32m96[37m)[39m
+2024-03-17 01:20:48 - root - INFO - Starting server
+2024-03-17 01:20:48 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.0.149:8000
+2024-03-17 01:20:48 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-03-17 01:20:48 - werkzeug - INFO -  * Restarting with stat
+2024-03-17 01:20:49 - root - INFO - Starting server
+2024-03-17 01:20:49 - werkzeug - WARNING -  * Debugger is active!
+2024-03-17 01:20:49 - werkzeug - INFO -  * Debugger PIN: 383-352-546
+2024-03-17 01:21:27 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:27] "GET / HTTP/1.1" 200 -
+2024-03-17 01:21:27 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:27] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:27 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:27] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:27 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:27] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-03-17 01:21:27 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:27] "GET / HTTP/1.1" 200 -
+2024-03-17 01:21:27 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:27] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:27 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:27] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:27 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:27] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "GET / HTTP/1.1" 200 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "GET / HTTP/1.1" 200 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "GET / HTTP/1.1" 200 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "GET / HTTP/1.1" 200 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "GET / HTTP/1.1" 200 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-03-17 01:21:28 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2024 01:21:28] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -

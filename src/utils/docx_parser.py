@@ -97,9 +97,7 @@ class DocxParser:
                     with zipf.open(fname) as f:
                         text += self.xml2text(f.read().decode("utf-8"))
 
-            image_directory = image_directory or self.__image_directory
-
-            if image_directory:
+            if image_directory := image_directory or self.__image_directory:
                 for fname in filelist:
                     if fname.startswith("word/media/") and any(
                         fname.lower().endswith(ext) for ext in self._image_extensions

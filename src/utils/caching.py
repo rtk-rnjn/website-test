@@ -1,12 +1,8 @@
 from __future__ import annotations
 
 from collections.abc import Callable, Iterator
-from typing import TYPE_CHECKING, Any, Generic, TypeVar
-
-if TYPE_CHECKING:
-    from typing_extensions import Self
-
 from functools import wraps
+from typing import Any, Generic, TypeVar
 
 from lru import LRU
 
@@ -15,7 +11,7 @@ VT = TypeVar("VT")
 LRU_CACHE: int = 2**10
 
 
-def lru_callback(key: KT, value: VT) -> None:
+def lru_callback(key, value) -> None:
     pass
 
 
@@ -88,7 +84,7 @@ class Cache(Generic[KT, VT]):
 
     @classmethod
     def fromdict(
-        cls: Self[Cache[KT, VT]],
+        cls,
         cache_size: int = LRU_CACHE,
         callback: Callable[[KT, VT], None] | None = None,
         *,
@@ -97,7 +93,7 @@ class Cache(Generic[KT, VT]):
         if d is None:
             d = {}
 
-        cache: Self[Cache[KT, VT]] = cls(cache_size, callback=callback)
+        cache = cls(cache_size, callback=callback)
         cache.__from_dict(d)
         return cache
 
@@ -106,14 +102,8 @@ class Cache(Generic[KT, VT]):
         for k, v in d.items():
             self.__internal_cache[k] = v
 
-    def __hash_repr__(self) -> str:
-        d = {}
-        for k, v in self.__internal_cache.items():
-            d[hash(k)] = hash(v)
-        return repr(d)
 
-
-_GLOBAL_CACHE: Cache[KT, VT] = Cache(LRU_CACHE)
+_GLOBAL_CACHE = Cache(LRU_CACHE)
 
 
 def cache_function_result(func: Callable) -> Callable:

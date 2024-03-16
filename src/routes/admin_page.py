@@ -16,6 +16,7 @@ databases = [db for db in databases if db not in dont_capture]
 
 
 @app.route("/admin-page")
+@app.route("/admin-page/")
 @login_required
 async def admin_page() -> str:
     questions = {db: mongo_client[db].list_collection_names() for db in databases}
@@ -28,6 +29,7 @@ async def admin_page() -> str:
 
 
 @app.route("/admin-page/<database>/<collection>")
+@app.route("/admin-page/<database>/<collection>/")
 @login_required
 async def admin_page_db_col(database: str, collection: str) -> str:
     col = mongo_client[database][collection]
