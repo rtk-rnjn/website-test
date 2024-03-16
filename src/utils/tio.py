@@ -77,7 +77,7 @@ class Tio:
 
         bytes_ = (
             b"".join(
-                map(_to_tio_string, zip(strings.keys(), strings.values(), strict=False))
+                map(_to_tio_string, zip(strings.keys(), strings.values(), strict=False)),
             )
             + b"R"
         )

@@ -88,13 +88,13 @@
                                     <br>
                                     <div class="form-group">
                                         <label for="level-control-{{ outer_index }}">Level Select</label>
-                                        {% if document.l == 1 %}
+                                        {% if document.l | int == 1 %}
                                             <select class="form-control" id="level-control-{{ outer_index }}">
                                                 <option value="0">0</option>
                                                 <option value="1" selected>1</option>
                                                 <option value="2">2</option>
                                             </select>
-                                        {% elif document.l == 2 %}
+                                        {% elif document.l | int == 2 %}
                                             <select class="form-control" id="level-control-{{ outer_index }}">
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>

@@ -14,9 +14,10 @@ password = generate_password_hash(os.environ["ADMIN_PASSWORD"])
 
 
 @app.route("/admin-login", methods=["GET", "POST"])
+@app.route("/admin-login/", methods=["GET", "POST"])
 def admin_login():
     form = AdminLogin()
-    if form.validate_on_submit():
+    if form.validate_on_submit() and (form.password.data and form.email.data):
         if check_password_hash(password, form.password.data):
             user = User()
             user.email = form.email.data

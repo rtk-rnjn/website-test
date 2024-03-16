@@ -18,7 +18,8 @@ class QuestionUploadForm(FlaskForm):
             FileRequired(),
             FileSize(max_size=1 * 1024 * 1024),
             FileAllowed(
-                ["docx", "doc", "txt"], "Only .docx, .doc, and .txt files are allowed"
+                ["docx", "doc", "txt"],
+                "Only .docx, .doc, and .txt files are allowed",
             ),
         ],
     )

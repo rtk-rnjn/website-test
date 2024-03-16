@@ -106,7 +106,8 @@ class DocxParser:
                     ):
                         with zipf.open(fname) as f:
                             with open(
-                                f"{image_directory}/{fname.split('/')[-1]}", "wb"
+                                f"{image_directory}/{fname.split('/')[-1]}",
+                                "wb",
                             ) as img_file:
                                 img_file.write(f.read())
 
@@ -151,7 +152,7 @@ def parse_questions(text: str):
                 "D": option_d,
                 "correct_option": correct_option,
                 "explanation": explanation,
-            }
+            },
         )
 
     return questions
