@@ -22,9 +22,9 @@
             </div>
         </div>
         <div class="row mb-2">
-            <div class="col">Total Questions: {{ total_docs }}</div>
-            <div class="col ms-auto">
-                <a href="{{ url_for("admin_page") }}" class="btn btn-primary">Back To Admin Page</a>
+            <div class="col-12 mb-2">Total Questions: {{ total_docs }}</div>
+            <div class="col-12 mb-2">
+                <a href="{{ url_for('admin_page') }}" class="btn btn-primary">Back To Admin Page</a>
             </div>
         </div>
         <div class="row">
@@ -88,11 +88,25 @@
                                     <br>
                                     <div class="form-group">
                                         <label for="level-control-{{ outer_index }}">Level Select</label>
-                                        <select class="form-control" id="level-control-{{ outer_index }}">
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                        </select>
+                                        {% if document.l == 1 %}
+                                            <select class="form-control" id="level-control-{{ outer_index }}">
+                                                <option value="0">0</option>
+                                                <option value="1" selected>1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        {% elif document.l == 2 %}
+                                            <select class="form-control" id="level-control-{{ outer_index }}">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2" selected>2</option>
+                                            </select>
+                                        {% else %}
+                                            <select class="form-control" id="level-control-{{ outer_index }}">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        {% endif %}
                                     </div>
                                 </td>
                             </tr>
