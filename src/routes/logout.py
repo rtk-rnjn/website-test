@@ -5,6 +5,7 @@ from src import app
 
 
 @app.route("/logout", methods=["GET", "POST"])
+@app.route("/logout/", methods=["GET", "POST"])
 def logout():
     logout_user()
     return redirect(url_for("index"))

@@ -8,6 +8,7 @@ from src.forms import RegisterForm
 
 
 @app.route("/register", methods=["GET", "POST"])
+@app.route("/register/", methods=["GET", "POST"])
 def register():
     form = RegisterForm()
     if form.validate_on_submit():

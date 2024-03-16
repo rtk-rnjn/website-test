@@ -13,7 +13,6 @@ reportUnnecessaryTypeIgnoreComment = "warning"
 pythonVersion = "3.10"
 typeCheckingMode = "basic"
 strictParameterNoneValue = false
-include = ["cogs"]
 exclude = ["**/__pycache__", "build", "dist"]
 
 [tool.ruff]
@@ -37,7 +36,6 @@ select = [
 ]
 ignore = ['A003', 'D105', 'D107', 'D401', "F403", "F405", "E501", "PLR2004"]
 target-version = "py310"
-exclude = ["discord"]
 
 [tool.ruff.mccabe]
 max-complexity = 35

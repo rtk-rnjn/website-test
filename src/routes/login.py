@@ -10,6 +10,7 @@ from src.models import User
 
 
 @app.route("/login", methods=["GET", "POST"])
+@app.route("/login/", methods=["GET", "POST"])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -20,6 +21,8 @@ def login():
             return "<h1>Invalid email or password</h1>"
 
         password_hash = entity["password_hash"]
+        assert form.password.data and email
+
         if check_password_hash(password_hash, form.password.data):
             user = User()
             user.email = email
@@ -38,4 +41,4 @@ def protected():
     assert current_user.is_authenticated  # This is a proxy for the login_required decorator
     assert isinstance(current_user, User)
 
-    return "Logged in as: " + current_user.email
+    return f"Logged in as: {current_user.email}"
