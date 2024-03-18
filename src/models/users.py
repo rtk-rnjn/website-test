@@ -1,13 +1,15 @@
 from __future__ import annotations
 
 from flask_login import UserMixin
+from flask import Request
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from src import app, login_manager
 
+_ADMIN_EMAIL = "admin@admin.com"
 
 def _return_admin(email: str) -> User | None:
-    if email == "admin@admin.com":
+    if email == _ADMIN_EMAIL:
         user = User()
         user.email = email
         user.is_admin = True
@@ -35,14 +37,16 @@ def load_user(email: str) -> User | None:
 
 
 @login_manager.request_loader
-def request_loader(request) -> User | None:
+def request_loader(request: Request) -> User | None:
     email = request.form.get("email")
+    if email is None:
+        return None
+
     admin = _return_admin(email)
     if admin is not None:
         return admin
 
-    db = app.mongo["users_database"]
-    entity = db.users.find_one({"email": email})
+    entity = app.mongo.users_database.users.find_one({"email": email})
 
     if entity is None:
         return None
@@ -51,10 +55,7 @@ def request_loader(request) -> User | None:
     user.email = entity["email"]
     user.password_hash = entity["password_hash"]
 
-    if not user.check_password(request.form["password"]):
-        return None
-
-    return user
+    return user if user.check_password(request.form["password"]) else None
 
 
 class User(UserMixin):

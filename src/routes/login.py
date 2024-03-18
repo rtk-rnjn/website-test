@@ -15,8 +15,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         email = form.email.data
-        db = app.mongo["users_database"]
-        entity = db.users.find_one({"email": email})
+        entity = app.mongo.users_database.users.find_one({"email": email})
         if entity is None:
             return "<h1>Invalid email or password</h1>"
 

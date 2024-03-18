@@ -1,11 +1,14 @@
 import json
-from typing import cast
+from typing import cast, TYPE_CHECKING
 
 from bson import ObjectId
 from flask import render_template, request
 from flask_login import current_user, login_required
 
 from src import app, csrf
+
+if TYPE_CHECKING:
+    from src.utils.types import QuestionJsonData
 
 mongo_client = app.mongo
 databases = mongo_client.list_database_names()
@@ -54,10 +57,7 @@ async def admin_page_db_col(database: str, collection: str) -> str:
 csrf.exempt(admin_page_db_col)
 
 
-@app.route(
-    "/admin-page/<database>/<collection>/<question_id>/delete",
-    methods=["DELETE", "GET"],
-)
+@app.route("/admin-page/<database>/<collection>/<question_id>/delete", methods=["DELETE", "GET"])
 @login_required
 async def admin_page_db_col_delete(
     database: str,
@@ -75,10 +75,7 @@ async def admin_page_db_col_delete(
     return ""
 
 
-@app.route(
-    "/admin-page/<database>/<collection>/<question_id>/update",
-    methods=["GET", "PATCH"],
-)
+@app.route("/admin-page/<database>/<collection>/<question_id>/update", methods=["GET", "PATCH"])
 @login_required
 async def admin_page_db_col_update(
     database: str,
@@ -95,7 +92,7 @@ async def admin_page_db_col_update(
         json_object = request.data
         if json_object is None:
             return ""
-        json_data = json.loads(json_object)
+        json_data: QuestionJsonData = json.loads(json_object)
         payload = {
             "q": json_data["q"],
             "o": json_data["o"],
