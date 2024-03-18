@@ -2,251 +2,252 @@
 {% from "footer.html" import footer %}
 {% from "quill_toolbar.html" import quill_toolbar %}
 {% block head %}
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.snow.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.snow.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {% endblock %}
 {% block body %}
-    {% set mongo_documents = documents %}
-    <div class="m-3 p-3">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="text-center">Database: {{ database.replace('_', ' ').upper() }}</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <h2 class="text-center">Collection: {{ collection.replace('_', ' ').upper() }}</h2>
-            </div>
-        </div>
-        <div class="row mb-2">
-            <div class="col-12 mb-2">Total Questions: {{ total_docs }}</div>
-            <div class="col-12 mb-2">
-                <a href="{{ url_for('admin_page') }}" class="btn btn-primary">Back To Admin Page</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <table class="table table-striped border border-1">
-                    <thead>
-                        <tr>
-                            <th scope="col">Index</th>
-                            <th scope="col">Meta Info</th>
-                            <th scope="col">Question</th>
-                            <th scope="col">Options</th>
-                            <th scope="col">Answer</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for document in mongo_documents %}
-                            <tr id="tr-{{ loop.index }}">
-                                <th scope="row">{{ skip|int + loop.index }}</th>
-                                <td id="{{ document._id|string }}">
-                                    <small>{{ document._id|string }}</small>
-                                    <br>
-                                    {% if not document.t %}
-                                        <small>Last Updated at: <i>Not yet updated</i></small>
-                                    {% else %}
-                                        <small>Last Updated at: {{ document.t }}</small>
-                                    {% endif %}
-                                    {% if document.l == 1 %}
-                                        <br>
-                                        <small>Level: 1</small>
-                                    {% elif document.l == 2 %}
-                                        <br>
-                                        <small>Level: 2</small>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    {% set q = document.q %}
-                                    {% set outer_index = loop.index %}
-                                    {{ quill_toolbar(outer_index) }}
-                                    <div id="editor-{{ outer_index }}">{{ q | safe }}</div>
-                                    <div id="editor-extra-{{ outer_index }}">{{ document.e | safe }}</div>
-                                </td>
-                                <td>
-                                    <ol>
-                                        {% for option in document.o %}<li id="editor-{{ outer_index }}-{{ loop.index }}">{{ option | safe }}</li>{% endfor %}
-                                    </ol>
-                                </td>
-                                <td>
-                                    <div id="editor-answer-{{ outer_index }}">{{ document.a|int }}</div>
-                                </td>
-                                <td class="text-center">
-                                    <button class="btn btn-primary mb-1"
-                                            onclick="onUpdateQuestion('{{ database }}', '{{ collection }}', '{{ document._id|string }}', {{ outer_index }})">
-                                        Update
-                                    </button>
-                                    <br>
-                                    <button class="btn btn-danger mb-1"
-                                            onclick="onDeleteQuestion('{{ database }}', '{{ collection }}', '{{ document._id|string }}')">
-                                        Delete
-                                    </button>
-                                    <br>
-                                    <div class="form-group">
-                                        <label for="level-control-{{ outer_index }}">Level Select</label>
-                                        {% if document.l | int == 1 %}
-                                            <select class="form-control" id="level-control-{{ outer_index }}">
-                                                <option value="0">0</option>
-                                                <option value="1" selected>1</option>
-                                                <option value="2">2</option>
-                                            </select>
-                                        {% elif document.l | int == 2 %}
-                                            <select class="form-control" id="level-control-{{ outer_index }}">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2" selected>2</option>
-                                            </select>
-                                        {% else %}
-                                            <select class="form-control" id="level-control-{{ outer_index }}">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
-                                        {% endif %}
-                                    </div>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+{% set mongo_documents = documents %}
+<div class="m-3 p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Database: {{ database.replace('_', ' ').upper() }}</h1>
         </div>
     </div>
-    <div>
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                <li class="page-item">
-                    {% set i_skip = skip|int + 10 %}
-                    {% set d_skip = skip|int - 10 %}
-                    {% if d_skip < 0 %}
-                        {% set d_skip = 0 %}
-                    {% endif %}
-                    <a class="page-link"
-                       href="{{ url_for('admin_page_db_col', database=database, collection=collection, skip=d_skip, limit=limit) }}"
-                       aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link disabled" href="#" aria-disabled="true">Page: {{ skip|int // limit|int + 1 }}</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link"
-                       href="{{ url_for('admin_page_db_col', database=database, collection=collection, skip=i_skip, limit=limit) }}"
-                       aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center">Collection: {{ collection.replace('_', ' ').upper() }}</h2>
+        </div>
     </div>
+    <div class="row mb-2">
+        <div class="col-12 mb-2">Total Questions: {{ total_docs }}</div>
+        <div class="col-12 mb-2">
+            <a href="{{ url_for('admin_page') }}" class="btn btn-primary">Back To Admin Page</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped border border-1 bg-light opacity-100">
+                <thead>
+                    <tr>
+                        <th scope="col">Index</th>
+                        <th scope="col">Meta Info</th>
+                        <th scope="col">Question</th>
+                        <th scope="col">Options</th>
+                        <th scope="col">Answer</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for document in mongo_documents %}
+                    <tr id="tr-{{ loop.index }}">
+                        <th scope="row">{{ skip|int + loop.index }}</th>
+                        <td id="{{ document._id|string }}">
+                            <small>{{ document._id|string }}</small>
+                            <br>
+                            {% if not document.t %}
+                            <small>Last Updated at: <i>Not yet updated</i></small>
+                            {% else %}
+                            <small>Last Updated at: {{ document.t }}</small>
+                            {% endif %}
+                            {% if document.l == 1 %}
+                            <br>
+                            <small>Level: 1</small>
+                            {% elif document.l == 2 %}
+                            <br>
+                            <small>Level: 2</small>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% set q = document.q %}
+                            {% set outer_index = loop.index %}
+                            {{ quill_toolbar(outer_index) }}
+                            <div id="editor-{{ outer_index }}">{{ q | safe }}</div>
+                            <div id="editor-extra-{{ outer_index }}">{{ document.e | safe }}</div>
+                        </td>
+                        <td>
+                            <ol>
+                                {% for option in document.o %}<li id="editor-{{ outer_index }}-{{ loop.index }}">{{ option | safe }}</li>{% endfor %}
+                            </ol>
+                        </td>
+                        <td>
+                            <div id="editor-answer-{{ outer_index }}">{{ document.a|int }}</div>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary mb-1"
+                                onclick="onUpdateQuestion('{{ database }}', '{{ collection }}', '{{ document._id|string }}', {{ outer_index }})">
+                                Update
+                            </button>
+                            <br>
+                            <button class="btn btn-danger mb-1" onclick="onDeleteQuestion('{{ database }}', '{{ collection }}', '{{ document._id|string }}')">
+                                Delete
+                            </button>
+                            <br>
+                            <div class="form-group">
+                                <label for="level-control-{{ outer_index }}">Level Select</label>
+                                {% if document.l %}
+                                {% if document.l | int == 1 %}
+                                <select class="form-control" id="level-control-{{ outer_index }}">
+                                    <option value="0">0</option>
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                </select>
+                                {% elif document.l | int == 2 %}
+                                <select class="form-control" id="level-control-{{ outer_index }}">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2" selected>2</option>
+                                </select>
+                                {% else %}
+                                <select class="form-control" id="level-control-{{ outer_index }}">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                                {% endif %}
+                                {% else %}
+                                <select class="form-control" id="level-control-{{ outer_index }}">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                                {% endif %}
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                {% set i_skip = skip|int + 10 %}
+                {% set d_skip = skip|int - 10 %}
+                {% if d_skip < 0 %} {% set d_skip=0 %} {% endif %} <a class="page-link"
+                    href="{{ url_for('admin_page_db_col', database=database, collection=collection, skip=d_skip, limit=limit) }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link disabled" href="#" aria-disabled="true">Page: {{ skip|int // limit|int + 1 }}</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for('admin_page_db_col', database=database, collection=collection, skip=i_skip, limit=limit) }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 {% endblock %}
 {% block scripts %}
-    <script>
-        hljs.highlightAll();
-        var editors = [];
+<script>
+    hljs.highlightAll();
+    var editors = [];
 
-        document.addEventListener('DOMContentLoaded', function() {
-            let i = 1;
-            const options = {
+    document.addEventListener('DOMContentLoaded', function () {
+        let i = 1;
+        const options = {
+            modules: {
+                toolbar: false,
+                syntax: true,
+            },
+            theme: 'snow',
+        }
+        while (document.getElementById(`editor-${i}`)) {
+            let quill = new Quill(`#editor-${i}`, {
                 modules: {
-                    toolbar: false,
+                    toolbar: `#toolbar-container-${i}`,
                     syntax: true,
                 },
                 theme: 'snow',
+            });
+            editors.push({
+                index: i,
+                editor: quill,
+            });
+
+            new Quill(`#editor-extra-${i}`, options);
+
+            new Quill(`#editor-answer-${i}`, options);
+
+            let j = 1;
+            while (document.getElementById(`editor-${i}-${j}`)) {
+                new Quill(`#editor-${i}-${j}`, options);
+                j++;
             }
-            while (document.getElementById(`editor-${i}`)) {
-                let quill = new Quill(`#editor-${i}`, {
-                    modules: {
-                        toolbar: `#toolbar-container-${i}`,
-                        syntax: true,
-                    },
-                    theme: 'snow',
-                });
-                editors.push({
-                    index: i,
-                    editor: quill,
-                });
-
-                new Quill(`#editor-extra-${i}`, options);
-
-                new Quill(`#editor-answer-${i}`, options);
-
-                let j = 1;
-                while (document.getElementById(`editor-${i}-${j}`)) {
-                    new Quill(`#editor-${i}-${j}`, options);
-                    j++;
-                }
-                i++;
-            }
-        });
-    </script>
-    <script>
-        function onDeleteQuestion(database, collection, questionId) {
-            if (confirm("Are you sure you want to delete this question?")) {
-                let uri = `/admin-page/${database}/${collection}/${questionId}/delete`;
-
-                fetch(uri, {
-                    method: 'DELETE',
-                }).then(response => {
-                    if (response.ok) {
-                        location.reload();
-                    }
-                });
-            }
+            i++;
         }
-    </script>
-    <script>
-        function onUpdateQuestion(database, collection, questionId, editorIndex) {
-            let editor = document.getElementById(`editor-${editorIndex}`);
-            let editorExtra = document.getElementById(`editor-extra-${editorIndex}`);
-            let realEditor = editors.find(e => e.index === editorIndex).editor;
-
-            let questionHtml = realEditor.getSemanticHTML();
-            let options = [];
-
-            let i = 1;
-            while (document.getElementById(`editor-${editorIndex}-${i}`)) {
-                let optionEditor = document.getElementById(`editor-${editorIndex}-${i}`);
-                options.push(optionEditor.innerHTML);
-                i++;
-            }
-
-            let answerEditor = document.querySelector(`#editor-answer-${editorIndex}`);
-            let answer = answerEditor.textContent;
-
-            let level = document.getElementById(`level-control-${editorIndex}`).value;
-            level = parseInt(level);
-
-            let dateTime = new Date();
-            dateTime = dateTime.toDateString();
-
-            let object = {
-                q: questionHtml,
-                o: options,
-                a: answer,
-                e: editorExtra.innerHTML,
-                l: level,
-                t: dateTime,
-            };
-
-            let uri = `/admin-page/${database}/${collection}/${questionId}/update`;
+    });
+</script>
+<script>
+    function onDeleteQuestion(database, collection, questionId) {
+        if (confirm("Are you sure you want to delete this question?")) {
+            let uri = `/admin-page/${database}/${collection}/${questionId}/delete`;
 
             fetch(uri, {
-                method: "PATCH",
-                body: JSON.stringify(object),
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                }
+                method: 'DELETE',
             }).then(response => {
                 if (response.ok) {
-                    alert("Question updated successfully");
+                    location.reload();
                 }
             });
         }
-    </script>
+    }
+</script>
+<script>
+    function onUpdateQuestion(database, collection, questionId, editorIndex) {
+        let editor = document.getElementById(`editor-${editorIndex}`);
+        let editorExtra = document.getElementById(`editor-extra-${editorIndex}`);
+        let realEditor = editors.find(e => e.index === editorIndex).editor;
+
+        let questionHtml = realEditor.getSemanticHTML();
+        let options = [];
+
+        let i = 1;
+        while (document.getElementById(`editor-${editorIndex}-${i}`)) {
+            let optionEditor = document.getElementById(`editor-${editorIndex}-${i}`);
+            options.push(optionEditor.innerHTML);
+            i++;
+        }
+
+        let answerEditor = document.querySelector(`#editor-answer-${editorIndex}`);
+        let answer = answerEditor.textContent;
+
+        let level = document.getElementById(`level-control-${editorIndex}`).value;
+        level = parseInt(level);
+
+        let dateTime = new Date();
+        dateTime = dateTime.toDateString();
+
+        let object = {
+            q: questionHtml,
+            o: options,
+            a: answer,
+            e: editorExtra.innerHTML,
+            l: level,
+            t: dateTime,
+        };
+
+        let uri = `/admin-page/${database}/${collection}/${questionId}/update`;
+
+        fetch(uri, {
+            method: "PATCH",
+            body: JSON.stringify(object),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert("Question updated successfully");
+            }
+        });
+    }
+</script>
 {% endblock %}
