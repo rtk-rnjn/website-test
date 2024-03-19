@@ -3,12 +3,12 @@ from flask import render_template
 from src import app
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index() -> str:
-    return render_template("index.html", title="Index")
+    return render_template("index.html", title="Home")
 
 
-@app.route("/resources/universal_ide")
+@app.route("/resources/universal_ide", methods=["GET"])
 def universal_ide() -> str:
     return render_template(template_name_or_list="ide.html", title="IDE")
 

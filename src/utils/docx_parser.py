@@ -97,16 +97,15 @@ class DocxParser:
                     with zipf.open(fname) as f:
                         text += self.xml2text(f.read().decode("utf-8"))
 
-            image_directory = image_directory or self.__image_directory
-
-            if image_directory:
+            if image_directory := image_directory or self.__image_directory:
                 for fname in filelist:
                     if fname.startswith("word/media/") and any(
                         fname.lower().endswith(ext) for ext in self._image_extensions
                     ):
                         with zipf.open(fname) as f:
                             with open(
-                                f"{image_directory}/{fname.split('/')[-1]}", "wb"
+                                f"{image_directory}/{fname.split('/')[-1]}",
+                                "wb",
                             ) as img_file:
                                 img_file.write(f.read())
 
@@ -151,7 +150,7 @@ def parse_questions(text: str):
                 "D": option_d,
                 "correct_option": correct_option,
                 "explanation": explanation,
-            }
+            },
         )
 
     return questions

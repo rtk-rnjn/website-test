@@ -1,41 +1,41 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, Callable, Generic, Iterator, TypeVar
-
-if TYPE_CHECKING:
-    from typing_extensions import Self
-
+from collections.abc import Callable, Iterator
 from functools import wraps
+from typing import Any, Generic, TypeVar
 
 from lru import LRU
 
 KT = TypeVar("KT")
 VT = TypeVar("VT")
-LRU_CACHE: int = 2 ** 10
+LRU_CACHE: int = 2**10
 
 
-def lru_callback(key: KT, value: VT) -> None:
+def lru_callback(key, value) -> None:
     pass
 
 
 class Cache(Generic[KT, VT]):
     def __init__(
         self,
-        cache_size: int | None = 2 ** 5,
+        cache_size: int | None = 2**5,
         *,
         callback: Callable[[KT, VT], None] | None = None,
     ) -> None:
         self.cache_size: int = cache_size or LRU_CACHE
         self.__internal_cache: LRU = LRU(
-            self.cache_size, callback=callback or lru_callback
+            self.cache_size,
+            callback=callback or lru_callback,
         )
 
         self.items: Callable[[], list[tuple[int, Any]]] = self.__internal_cache.items
         self.peek_first_item: Callable[
-            [], tuple[int, Any] | None
+            [],
+            tuple[int, Any] | None,
         ] = self.__internal_cache.peek_first_item
         self.peek_last_item: Callable[
-            [], tuple[int, Any] | None
+            [],
+            tuple[int, Any] | None,
         ] = self.__internal_cache.peek_last_item
         self.get_size: Callable[[], int] = self.__internal_cache.get_size
         self.set_size: Callable[[int], None] = self.__internal_cache.set_size
@@ -48,7 +48,8 @@ class Cache(Generic[KT, VT]):
 
         self.get_stats: Callable[[], tuple[int, int]] = self.__internal_cache.get_stats
         self.set_callback: Callable[
-            [Callable[[KT, VT], Any]], None
+            [Callable[[KT, VT], Any]],
+            None,
         ] = self.__internal_cache.set_callback
 
     def __repr__(self) -> str:
@@ -83,7 +84,7 @@ class Cache(Generic[KT, VT]):
 
     @classmethod
     def fromdict(
-        cls: Self[Cache[KT, VT]],
+        cls,
         cache_size: int = LRU_CACHE,
         callback: Callable[[KT, VT], None] | None = None,
         *,
@@ -92,7 +93,7 @@ class Cache(Generic[KT, VT]):
         if d is None:
             d = {}
 
-        cache: Self[Cache[KT, VT]] = cls(cache_size, callback=callback)
+        cache = cls(cache_size, callback=callback)
         cache.__from_dict(d)
         return cache
 
@@ -101,14 +102,8 @@ class Cache(Generic[KT, VT]):
         for k, v in d.items():
             self.__internal_cache[k] = v
 
-    def __hash_repr__(self) -> str:
-        d = {}
-        for k, v in self.__internal_cache.items():
-            d[hash(k)] = hash(v)
-        return repr(d)
 
-
-_GLOBAL_CACHE: Cache[KT, VT] = Cache(LRU_CACHE)
+_GLOBAL_CACHE = Cache(LRU_CACHE)
 
 
 def cache_function_result(func: Callable) -> Callable:
@@ -119,7 +114,6 @@ def cache_function_result(func: Callable) -> Callable:
             return _GLOBAL_CACHE[key]
         result = await func(*args, **kwargs)
         _GLOBAL_CACHE[key] = result
-        print(_GLOBAL_CACHE.__hash_repr__())
         return result
 
     return wrapper

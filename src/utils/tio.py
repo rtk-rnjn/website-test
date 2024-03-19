@@ -15,7 +15,7 @@ def _split_with_limit(text: str, limit: int = 5) -> list[str]:
     return lines[-limit:] + ["\n".join(lines[:-limit])] if lines else []
 
 
-def _parse_split_text_tio(texts: list[str]) -> dict[str, str]:
+def _parse_split_text_tio(texts: list[str]) -> dict:
     real_time: float = float(texts[0].split(":")[1][:-1])
     user_time: float = float(texts[1].split(":")[1][:-1])
     sys_time: float = float(texts[2].split(":")[1][:-1])
@@ -77,7 +77,7 @@ class Tio:
 
         bytes_ = (
             b"".join(
-                map(_to_tio_string, zip(strings.keys(), strings.values(), strict=False))
+                map(_to_tio_string, zip(strings.keys(), strings.values(), strict=False)),
             )
             + b"R"
         )
@@ -95,11 +95,9 @@ class Tio:
             if res.status != 200:
                 raise aiohttp.ClientError(res.status)
 
-            data = await res.read()
-            data: str = data.decode("utf-8")
-            data = data.replace(data[:16], "")
-
-            return data
+            buffer_data = await res.read()
+            data: str = buffer_data.decode("utf-8")
+            return data.replace(data[:16], "")
 
 
-# TODO: Caching, Timeout, Rate Limiting, Logging
+# TODO: Rate Limiting, Logging
