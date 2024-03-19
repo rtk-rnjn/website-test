@@ -20,14 +20,12 @@
     {% block head %}{% endblock %}
     <script>
         /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-        particlesJS.load('particles-js', '{{ url_for("static", filename="particles.json") }}', function () {
-            console.log('callback - particles.js config loaded');
-        });
+        particlesJS.load('particles-js', '{{ url_for("static", filename="particles.json") }}', function () {});
     </script>
 </head>
 
 <body class="d-flex flex-column h-100">
-    <div id="particles-js" class="position-fixed h-100 z-n1">
+    <div id="particles-js" class="position-fixed h-100 z-n1 w-100">
     </div>
     <main class="flex-shrink-0">
         {% block body %}{% endblock %}

@@ -64,7 +64,7 @@
                             {% set q = document.q %}
                             {% set outer_index = loop.index %}
                             {{ quill_toolbar(outer_index) }}
-                            <div id="editor-{{ outer_index }}">{{ q | safe }}</div>
+                            <div id="editor-{{ outer_index }}" class="mb-2">{{ q | safe }}</div>
                             <div id="editor-extra-{{ outer_index }}">{{ document.e | safe }}</div>
                         </td>
                         <td>
@@ -150,16 +150,11 @@
 <script>
     hljs.highlightAll();
     var editors = [];
+    var extraEditors = [];
 
     document.addEventListener('DOMContentLoaded', function () {
         let i = 1;
-        const options = {
-            modules: {
-                toolbar: false,
-                syntax: true,
-            },
-            theme: 'snow',
-        }
+
         while (document.getElementById(`editor-${i}`)) {
             let quill = new Quill(`#editor-${i}`, {
                 modules: {
@@ -173,13 +168,31 @@
                 editor: quill,
             });
 
-            new Quill(`#editor-extra-${i}`, options);
+            let quillExtra = new Quill(`#editor-extra-${i}`, {
+                modules: {
+                    syntax: true,
+                },
+                theme: 'snow',
+            });
+            extraEditors.push(quillExtra);
 
-            new Quill(`#editor-answer-${i}`, options);
+            new Quill(`#editor-answer-${i}`, {
+                modules: {
+                    toolbar: false,
+                    syntax: true,
+                },
+                theme: 'snow',
+            });
 
             let j = 1;
             while (document.getElementById(`editor-${i}-${j}`)) {
-                new Quill(`#editor-${i}-${j}`, options);
+                new Quill(`#editor-${i}-${j}`, {
+                    modules: {
+                        toolbar: false,
+                        syntax: true,
+                    },
+                    theme: 'snow',
+                });
                 j++;
             }
             i++;
