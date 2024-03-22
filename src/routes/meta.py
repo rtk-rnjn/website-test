@@ -11,8 +11,3 @@ def index() -> str:
 @app.route("/resources/universal_ide", methods=["GET"])
 def universal_ide() -> str:
     return render_template(template_name_or_list="ide.html", title="IDE")
-
-
-@app.route("/test")
-def test() -> str:
-    return render_template("mcq.html", title="Test", questions={})

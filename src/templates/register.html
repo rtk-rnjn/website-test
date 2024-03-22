@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% from "footer.html" import footer %}
-{% block head %}{% endblock %}
+
 {% block body %}
     <section class="intro vh-100">
         <div class="mask d-flex align-items-center h-100"
@@ -18,22 +18,16 @@
                                     {% if error %}
                                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                             {{ error }}
-                                            <button type="button"
-                                                    class="btn-close"
-                                                    data-bs-dismiss="alert"
-                                                    aria-label="Close"></button>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     {% endif %}
                                     {% if message %}
                                         <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                            {{ message }}
-                                            <button type="button"
-                                                    class="btn-close"
-                                                    data-bs-dismiss="alert"
-                                                    aria-label="Close"></button>
+                                            {{ message | safe }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     {% endif %}
-                                    <form method="POST" action="{{ url_for("register") }}">
+                                    <form method="POST" action='{{ url_for("register") }}'>
                                         {{ form.csrf_token }}
                                         {% set class = "form-control form-control-lg" %}
                                         <div class="form-outline mb-4">
@@ -45,6 +39,11 @@
                                             {{ form.email.label }}
                                             {% for error in form.email.errors %}<p class="text-danger">{{ error }}</p>{% endfor %}
                                             {{ form.email(class=class) }}
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            {{ form.username.label }}
+                                            {% for error in form.username.errors %}<p class="text-danger">{{ error }}</p>{% endfor %}
+                                            {{ form.username(class=class) }}
                                         </div>
                                         <div class="form-outline mb-4">
                                             {{ form.password.label }}

@@ -1,5 +1,5 @@
 import json
-from typing import cast, TYPE_CHECKING
+from typing import TYPE_CHECKING, cast
 
 from bson import ObjectId
 from flask import render_template, request
@@ -59,11 +59,7 @@ csrf.exempt(admin_page_db_col)
 
 @app.route("/admin-page/<database>/<collection>/<question_id>/delete", methods=["DELETE", "GET"])
 @login_required
-async def admin_page_db_col_delete(
-    database: str,
-    collection: str,
-    question_id: str,
-) -> str:
+async def admin_page_db_col_delete(database: str, collection: str, question_id: str) -> str:
     col = mongo_client[database][collection]
     if request.method == "GET":
         document: dict = cast(dict, col.find_one({"_id": ObjectId(question_id)}, {"_id": 0}))
@@ -77,11 +73,7 @@ async def admin_page_db_col_delete(
 
 @app.route("/admin-page/<database>/<collection>/<question_id>/update", methods=["GET", "PATCH"])
 @login_required
-async def admin_page_db_col_update(
-    database: str,
-    collection: str,
-    question_id: str,
-) -> str:
+async def admin_page_db_col_update(database: str, collection: str, question_id: str) -> str:
     col = mongo_client[database][collection]
     if request.method == "GET":
         document = col.find_one({"_id": ObjectId(question_id)}, {"_id": 0})
