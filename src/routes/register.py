@@ -30,7 +30,7 @@ def register():
         fullname = form.fullname.data
 
         db.users.insert_one(
-            {"email": email, "password_hash": password_hash, "fullname": fullname},
+            {"email": email, "password_hash": password_hash, "fullname": fullname, "username": form.username.data},
         )
 
         anchor = f"<a href='{url_for('login')}'>Click here to login</a>"
