@@ -3,4 +3,4 @@ __pycache__/
 .env
 logs.log
 logs.sqlite
-test.py
+test.*
