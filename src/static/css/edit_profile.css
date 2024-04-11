@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif; /* Specify a base font */
+  margin: 0;
+  padding: 2rem; /* Consistent padding around the content */
+  background-color: #7b7979; /* Light background color */
+}
+
+
+.edit-profile-container {
+  color: #151515;
+  background-color: #ffffff;
+  padding: 3rem; /* Consistent padding within the container */
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(104, 192, 230, 0.559);
+  max-width: 700px; /* Set a maximum width for responsiveness */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem; /* Adjust heading size */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex; /* Use flexbox for cleaner layout */
+  justify-content: space-between; /* Align labels and inputs horizontally */
+  flex-wrap: wrap; /* Allow labels to wrap to next line if needed */
+}
+
+label {
+  display: block;
+  width: 25%; /* Set label width for balanced layout */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 70%; /* Set input width */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 16px; /* Consistent font size for inputs */
+}
+
+textarea {
+  height: 150px;
+}
+
+.avatar-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.avatar-section img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #fff; /* Add a white border for better visibility */
+}
+
+.password-change,
+.notifications,
+.privacy-settings {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.password-change h3,
+.notifications h3,
+.privacy-settings h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px; /* Adjust button padding */
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+button[type="button"] { /* Style the cancel button differently */
+  background-color: #ddd;
+  color: #333;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="button"]:hover {
+  background-color: #ccc;
+}
+
+.social-links {
+  display: flex; /* Arrange social links horizontally */
+  flex-wrap: wrap; /* Allow links to wrap to next line if needed */
+  margin-bottom: 1.5rem;
+}
+
+.social-links div {
+  margin-right: 1rem; /* Add space between social link fields */
+}
+
+/* Add icons for social links (replace with your preferred methods) */
+.social-links div:first-child:before {
+  content: "\f09a"; /* Facebook icon using Font Awesome */
+  font-family: FontAwesome; /* Replace with your font family */
+  margin-right: 5px;
+  color: #3b5998;
+}
+
