@@ -63,7 +63,7 @@
                             {% set q = document.q %}
                             {% set outer_index = loop.index %}
                             <div id="editor-{{ outer_index }}" class="border border-1 p-2" contenteditable="true">
-                                <code class="text-dark fs-4">{{ q | safe }}</code>
+                                <div class="text-dark fs-4">{{ q | safe }}</div>
                             </div>
                             <div id="explanation-{{ outer_index }}" contenteditable="true" class="border border-1 p-2">
                                 {{ document.e | safe }}

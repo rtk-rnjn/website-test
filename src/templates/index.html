@@ -6,6 +6,7 @@
 {% from "front_cs.html" import front_cs %}
 {% from "front_interview.html" import front_interview %}
 {% from "front_why_us.html" import front_why_us %}
+
 {% block head %}
     <script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
     <style>
@@ -48,10 +49,7 @@
                     </button>
                 </div>
                 <div class="col-lg-6 img-tg ">
-                    <img class="title-img pt-7p position-absolute"
-                         src="{{ url_for('static', filename='images/study.png') }}"
-                         alt="study-img"
-                         style="max-width: 500px">
+                    <img class="title-img pt-7p position-absolute" src="{{ url_for('static', filename='images/study.png') }}" alt="study-img" style="max-width: 500px">
                 </div>
             </div>
         </div>
