@@ -89,5 +89,23 @@
           <button type="submit">Save Changes</button>
           <a href="user_profile.html"><button type="button" onclick="confirmDiscardChanges()">Cancel</button></a>
         </div>
+      </form>
+    </section>
+  </main>
+  <script>
+    const avatarUpload = document.getElementById("avatar-upload");
+    avatarUpload.addEventListener("change", displayUploadedImage);
+    function displayUploadedImage(event) {
+      const uploadedFile = event.target.files[0];
+      const avatarImage = document.querySelector(".avatar-section img");
+      if (uploadedFile) {
+        const imageUrl = URL.createObjectURL(uploadedFile);
+        avatarImage.style.width = "150px";
+        avatarImage.src = imageUrl;
+      }
+    }
+  </script>
+</body>
+</html>
           
       
