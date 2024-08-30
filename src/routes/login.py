@@ -34,17 +34,9 @@ def login():
             user.email = email
             login_user(user, remember=True)
 
-            return redirect(url_for("protected"))
+            return redirect(url_for("home"))
 
         return "<h1>Invalid email or password</h1>"
 
     return render_template("login.html", form=form)
 
-
-@app.route("/protected")
-@login_required
-def protected():
-    assert current_user.is_authenticated  # This is a proxy for the login_required decorator
-    assert isinstance(current_user, User)
-
-    return f"Logged in as: {current_user.email}"
