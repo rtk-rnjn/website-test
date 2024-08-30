@@ -1,0 +1,450 @@
+2024-08-27 22:09:43 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce014f94cdf1fadcafcade"}, "message": "Connection pool created", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:09:43 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce014f94cdf1fadcafcade, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce014f94cdf1fadcafcade"}}
+2024-08-27 22:09:43 - pymongo.serverSelection - DEBUG - {"message": "Waiting for suitable server to become available", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce014f94cdf1fadcafcade, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce014f94cdf1fadcafcade"}, "remainingTimeMS": 29}
+2024-08-27 22:10:02 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce0162481d702fb1037be9"}, "message": "Connection pool created", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:10:02 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce0162481d702fb1037be9, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>", "clientId": {"$oid": "66ce0162481d702fb1037be9"}}
+2024-08-27 22:10:02 - pymongo.serverSelection - DEBUG - {"message": "Waiting for suitable server to become available", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce0162481d702fb1037be9, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>", "clientId": {"$oid": "66ce0162481d702fb1037be9"}, "remainingTimeMS": 29}
+2024-08-27 22:15:10 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce029606335e774bbb2721"}, "message": "Connection pool created", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:15:10 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce029606335e774bbb2721, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>", "clientId": {"$oid": "66ce029606335e774bbb2721"}}
+2024-08-27 22:15:10 - pymongo.serverSelection - DEBUG - {"message": "Waiting for suitable server to become available", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce029606335e774bbb2721, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>", "clientId": {"$oid": "66ce029606335e774bbb2721"}, "remainingTimeMS": 29}
+2024-08-27 22:16:06 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}, "message": "Connection pool created", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:16:06 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce02cea18f6faa55dbbe69, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}}
+2024-08-27 22:16:06 - pymongo.serverSelection - DEBUG - {"message": "Waiting for suitable server to become available", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce02cea18f6faa55dbbe69, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}, "remainingTimeMS": 29}
+2024-08-27 22:16:06 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}, "message": "Connection pool ready", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:16:06 - pymongo.serverSelection - DEBUG - {"message": "Server selection succeeded", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce02cea18f6faa55dbbe69, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.0006435619998228503>]>", "clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:16:06 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}, "message": "Connection checkout started", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:16:06 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}, "message": "Connection created", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-27 22:16:06 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}, "message": "Connection ready", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.0006454079998547968}
+2024-08-27 22:16:06 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}, "message": "Connection checked out", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.001413716000115528}
+2024-08-27 22:16:06 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}, "message": "Command started", "command": "{\"ping\": 1, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"McOyL3ZhRPCn020PnyXEag==\", \"subType\": \"04\"}}}, \"$db\": \"admin\"}", "commandName": "ping", "databaseName": "admin", "requestId": 1957747793, "operationId": 1957747793, "driverConnectionId": 1, "serverConnectionId": 2, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:16:06 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}, "message": "Command succeeded", "durationMS": 0.5429999999999999, "reply": "{\"ok\": 1.0}", "commandName": "ping", "databaseName": "admin", "requestId": 1957747793, "operationId": 1957747793, "driverConnectionId": 1, "serverConnectionId": 2, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:16:06 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce02cea18f6faa55dbbe69"}, "message": "Connection checked in", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Connection pool created", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce0325a64aca38b231a42a, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce0325a64aca38b231a42a"}}
+2024-08-27 22:17:33 - pymongo.serverSelection - DEBUG - {"message": "Waiting for suitable server to become available", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce0325a64aca38b231a42a, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "remainingTimeMS": 29}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Connection pool ready", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.serverSelection - DEBUG - {"message": "Server selection succeeded", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce0325a64aca38b231a42a, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.0008527280001544568>]>", "clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Connection checkout started", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Connection created", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Connection ready", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.0003024870002263924}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Connection checked out", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.0012970289999429951}
+2024-08-27 22:17:33 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Command started", "command": "{\"ping\": 1, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"ZRDhjRXUTc+7V1k5JtSetg==\", \"subType\": \"04\"}}}, \"$db\": \"admin\"}", "commandName": "ping", "databaseName": "admin", "requestId": 1957747793, "operationId": 1957747793, "driverConnectionId": 1, "serverConnectionId": 6, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Command succeeded", "durationMS": 0.507, "reply": "{\"ok\": 1.0}", "commandName": "ping", "databaseName": "admin", "requestId": 1957747793, "operationId": 1957747793, "driverConnectionId": 1, "serverConnectionId": 6, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Connection checked in", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-27 22:17:33 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "listDatabases", "topologyDescription": "<TopologyDescription id: 66ce0325a64aca38b231a42a, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.0008527280001544568>]>", "clientId": {"$oid": "66ce0325a64aca38b231a42a"}}
+2024-08-27 22:17:33 - pymongo.serverSelection - DEBUG - {"message": "Server selection succeeded", "selector": "Primary()", "operation": "listDatabases", "topologyDescription": "<TopologyDescription id: 66ce0325a64aca38b231a42a, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.0008527280001544568>]>", "clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Connection checkout started", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Connection checked out", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.00013324000019565574}
+2024-08-27 22:17:33 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Command started", "command": "{\"listDatabases\": 1, \"nameOnly\": true, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"ZRDhjRXUTc+7V1k5JtSetg==\", \"subType\": \"04\"}}}, \"$db\": \"admin\"}", "commandName": "listDatabases", "databaseName": "admin", "requestId": 424238335, "operationId": 424238335, "driverConnectionId": 1, "serverConnectionId": 6, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Command succeeded", "durationMS": 0.721, "reply": "{\"databases\": [{\"name\": \"admin\"}, {\"name\": \"config\"}, {\"name\": \"local\"}], \"ok\": 1.0}", "commandName": "listDatabases", "databaseName": "admin", "requestId": 424238335, "operationId": 424238335, "driverConnectionId": 1, "serverConnectionId": 6, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce0325a64aca38b231a42a"}, "message": "Connection checked in", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-27 22:17:33 - root - INFO - Starting server
+2024-08-27 22:17:33 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.0.120:8000
+2024-08-27 22:17:33 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-08-27 22:17:33 - werkzeug - INFO -  * Restarting with stat
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Connection pool created", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce03250dfb76360db0672c, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce03250dfb76360db0672c"}}
+2024-08-27 22:17:33 - pymongo.serverSelection - DEBUG - {"message": "Waiting for suitable server to become available", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce03250dfb76360db0672c, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce03250dfb76360db0672c"}, "remainingTimeMS": 29}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Connection pool ready", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.serverSelection - DEBUG - {"message": "Server selection succeeded", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce03250dfb76360db0672c, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.0005175989999770536>]>", "clientId": {"$oid": "66ce03250dfb76360db0672c"}, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Connection checkout started", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Connection created", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Connection ready", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.0006472449999819219}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Connection checked out", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.0014748999997209467}
+2024-08-27 22:17:33 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Command started", "command": "{\"ping\": 1, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"o+UShGvFQjKOIe5PNX9InA==\", \"subType\": \"04\"}}}, \"$db\": \"admin\"}", "commandName": "ping", "databaseName": "admin", "requestId": 1957747793, "operationId": 1957747793, "driverConnectionId": 1, "serverConnectionId": 9, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Command succeeded", "durationMS": 0.36000000000000004, "reply": "{\"ok\": 1.0}", "commandName": "ping", "databaseName": "admin", "requestId": 1957747793, "operationId": 1957747793, "driverConnectionId": 1, "serverConnectionId": 9, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Connection checked in", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-27 22:17:33 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "listDatabases", "topologyDescription": "<TopologyDescription id: 66ce03250dfb76360db0672c, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.0005175989999770536>]>", "clientId": {"$oid": "66ce03250dfb76360db0672c"}}
+2024-08-27 22:17:33 - pymongo.serverSelection - DEBUG - {"message": "Server selection succeeded", "selector": "Primary()", "operation": "listDatabases", "topologyDescription": "<TopologyDescription id: 66ce03250dfb76360db0672c, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.0005175989999770536>]>", "clientId": {"$oid": "66ce03250dfb76360db0672c"}, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Connection checkout started", "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Connection checked out", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.00010031300007540267}
+2024-08-27 22:17:33 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Command started", "command": "{\"listDatabases\": 1, \"nameOnly\": true, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"o+UShGvFQjKOIe5PNX9InA==\", \"subType\": \"04\"}}}, \"$db\": \"admin\"}", "commandName": "listDatabases", "databaseName": "admin", "requestId": 424238335, "operationId": 424238335, "driverConnectionId": 1, "serverConnectionId": 9, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Command succeeded", "durationMS": 0.49799999999999994, "reply": "{\"databases\": [{\"name\": \"admin\"}, {\"name\": \"config\"}, {\"name\": \"local\"}], \"ok\": 1.0}", "commandName": "listDatabases", "databaseName": "admin", "requestId": 424238335, "operationId": 424238335, "driverConnectionId": 1, "serverConnectionId": 9, "serverHost": "localhost", "serverPort": 27017}
+2024-08-27 22:17:33 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce03250dfb76360db0672c"}, "message": "Connection checked in", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-27 22:17:33 - root - INFO - Starting server
+2024-08-27 22:17:33 - werkzeug - WARNING -  * Debugger is active!
+2024-08-27 22:17:33 - werkzeug - INFO -  * Debugger PIN: 116-815-926
+2024-08-27 22:17:51 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:17:51] "GET / HTTP/1.1" 200 -
+2024-08-27 22:17:51 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:17:51] "GET /static/css/bootstrap-extends.css HTTP/1.1" 200 -
+2024-08-27 22:17:51 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:17:51] "GET /static/css/margins-padding.css HTTP/1.1" 200 -
+2024-08-27 22:17:51 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:17:51] "GET /static/scripts/particles.js HTTP/1.1" 200 -
+2024-08-27 22:17:51 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:17:51] "GET /static/images/study.png HTTP/1.1" 200 -
+2024-08-27 22:17:51 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:17:51] "GET /static/particles.json HTTP/1.1" 200 -
+2024-08-27 22:17:52 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:17:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-27 22:18:02 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:18:02] "GET / HTTP/1.1" 200 -
+2024-08-27 22:18:02 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:18:02] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:18:02 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:18:02] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:18:02 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:18:02] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:18:02 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:18:02] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:18:02 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:18:02] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:19:40 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:40] "GET / HTTP/1.1" 200 -
+2024-08-27 22:19:40 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:40] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:19:40 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:40] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:19:40 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:40] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:19:40 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:40] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:19:41 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:41] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:19:44 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:44] "GET / HTTP/1.1" 200 -
+2024-08-27 22:19:44 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:44] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:19:44 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:44] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:19:44 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:44] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:19:44 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:44] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:19:44 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:19:44] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:21:55 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:21:55] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:21:55 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:21:55] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:22:15 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:15] "GET / HTTP/1.1" 200 -
+2024-08-27 22:22:15 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:15] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:22:15 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:15] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:22:15 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:15] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:22:15 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:15] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:22:15 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:15] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:22:33 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:33] "GET / HTTP/1.1" 200 -
+2024-08-27 22:22:33 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:33] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:22:33 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:33] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:22:33 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:33] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:22:33 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:33] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:22:33 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:22:33] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:23:19 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:19] "GET / HTTP/1.1" 200 -
+2024-08-27 22:23:19 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:19] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:23:19 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:19] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:23:19 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:19] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:23:19 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:19] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:23:19 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:19] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:23:52 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:52] "GET / HTTP/1.1" 200 -
+2024-08-27 22:23:52 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:52] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:23:52 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:52] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:23:52 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:52] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:23:52 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:52] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:23:52 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:23:52] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:25:03 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:03] "GET / HTTP/1.1" 200 -
+2024-08-27 22:25:03 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:03] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:25:03 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:03] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:25:03 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:03] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:25:03 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:03] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:25:03 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:03] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:25:20 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:20] "GET / HTTP/1.1" 200 -
+2024-08-27 22:25:20 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:20] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:25:20 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:20] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:25:20 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:20] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:25:20 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:20] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:25:20 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:20] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:25:29 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:29] "GET / HTTP/1.1" 200 -
+2024-08-27 22:25:29 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:29] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:25:29 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:29] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:25:29 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:29] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:25:29 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:29] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:25:29 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:29] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:25:50 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:50] "GET / HTTP/1.1" 200 -
+2024-08-27 22:25:50 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:50] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:25:50 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:50] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:25:50 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:50] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:25:50 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:50] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:25:50 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:25:50] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:26:58 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:26:58] "GET / HTTP/1.1" 200 -
+2024-08-27 22:26:58 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:26:58] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:26:58 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:26:58] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:26:58 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:26:58] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:26:58 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:26:58] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:26:58 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:26:58] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:27:12 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:12] "GET / HTTP/1.1" 200 -
+2024-08-27 22:27:12 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:12] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:27:12 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:12] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:27:12 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:12] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:27:12 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:12] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:27:12 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:12] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:27:22 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:22] "GET / HTTP/1.1" 200 -
+2024-08-27 22:27:22 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:22] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:27:22 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:22] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:27:22 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:22] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:27:22 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:22] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:27:22 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:27:22] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-27 22:29:04 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:29:04] "GET / HTTP/1.1" 200 -
+2024-08-27 22:29:04 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:29:04] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-27 22:29:04 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:29:04] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-27 22:29:04 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:29:04] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-27 22:29:04 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:29:04] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-27 22:29:04 - werkzeug - INFO - 127.0.0.1 - - [27/Aug/2024 22:29:04] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:18:47 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Connection pool created", "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:47 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce1f8f570d4c6db6c490da, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}}
+2024-08-28 00:18:47 - pymongo.serverSelection - DEBUG - {"message": "Waiting for suitable server to become available", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce1f8f570d4c6db6c490da, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "remainingTimeMS": 29}
+2024-08-28 00:18:47 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Connection pool ready", "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:47 - pymongo.serverSelection - DEBUG - {"message": "Server selection succeeded", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce1f8f570d4c6db6c490da, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.0006437309993998497>]>", "clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:47 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Connection checkout started", "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:47 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Connection created", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-28 00:18:47 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Connection ready", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.00025594399994588457}
+2024-08-28 00:18:47 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Connection checked out", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.0010796640008265967}
+2024-08-28 00:18:47 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Command started", "command": "{\"ping\": 1, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"SY5sYeCvRF+bCLmon1zp8w==\", \"subType\": \"04\"}}}, \"$db\": \"admin\"}", "commandName": "ping", "databaseName": "admin", "requestId": 1957747793, "operationId": 1957747793, "driverConnectionId": 1, "serverConnectionId": 12, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:47 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Command succeeded", "durationMS": 0.34299999999999997, "reply": "{\"ok\": 1.0}", "commandName": "ping", "databaseName": "admin", "requestId": 1957747793, "operationId": 1957747793, "driverConnectionId": 1, "serverConnectionId": 12, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:47 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Connection checked in", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-28 00:18:47 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "listDatabases", "topologyDescription": "<TopologyDescription id: 66ce1f8f570d4c6db6c490da, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.0006437309993998497>]>", "clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}}
+2024-08-28 00:18:47 - pymongo.serverSelection - DEBUG - {"message": "Server selection succeeded", "selector": "Primary()", "operation": "listDatabases", "topologyDescription": "<TopologyDescription id: 66ce1f8f570d4c6db6c490da, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.0006437309993998497>]>", "clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:47 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Connection checkout started", "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:47 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Connection checked out", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.00012822799999412382}
+2024-08-28 00:18:47 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Command started", "command": "{\"listDatabases\": 1, \"nameOnly\": true, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"SY5sYeCvRF+bCLmon1zp8w==\", \"subType\": \"04\"}}}, \"$db\": \"admin\"}", "commandName": "listDatabases", "databaseName": "admin", "requestId": 424238335, "operationId": 424238335, "driverConnectionId": 1, "serverConnectionId": 12, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:47 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Command succeeded", "durationMS": 0.508, "reply": "{\"databases\": [{\"name\": \"admin\"}, {\"name\": \"config\"}, {\"name\": \"local\"}], \"ok\": 1.0}", "commandName": "listDatabases", "databaseName": "admin", "requestId": 424238335, "operationId": 424238335, "driverConnectionId": 1, "serverConnectionId": 12, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:47 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f8f570d4c6db6c490da"}, "message": "Connection checked in", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-28 00:18:47 - root - INFO - Starting server
+2024-08-28 00:18:47 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.102:8000
+2024-08-28 00:18:47 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-08-28 00:18:47 - werkzeug - INFO -  * Restarting with stat
+2024-08-28 00:18:48 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Connection pool created", "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:48 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce1f9087f36c21b0ee65f9, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}}
+2024-08-28 00:18:48 - pymongo.serverSelection - DEBUG - {"message": "Waiting for suitable server to become available", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce1f9087f36c21b0ee65f9, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "remainingTimeMS": 29}
+2024-08-28 00:18:48 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Connection pool ready", "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:48 - pymongo.serverSelection - DEBUG - {"message": "Server selection succeeded", "selector": "Primary()", "operation": "ping", "topologyDescription": "<TopologyDescription id: 66ce1f9087f36c21b0ee65f9, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.000508080000145128>]>", "clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:48 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Connection checkout started", "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:48 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Connection created", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-28 00:18:48 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Connection ready", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.0003765969995583873}
+2024-08-28 00:18:48 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Connection checked out", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.001276829999369511}
+2024-08-28 00:18:48 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Command started", "command": "{\"ping\": 1, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"9a1tGasBSS6AwPNyKPei+Q==\", \"subType\": \"04\"}}}, \"$db\": \"admin\"}", "commandName": "ping", "databaseName": "admin", "requestId": 1957747793, "operationId": 1957747793, "driverConnectionId": 1, "serverConnectionId": 15, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:48 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Command succeeded", "durationMS": 0.374, "reply": "{\"ok\": 1.0}", "commandName": "ping", "databaseName": "admin", "requestId": 1957747793, "operationId": 1957747793, "driverConnectionId": 1, "serverConnectionId": 15, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:48 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Connection checked in", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-28 00:18:48 - pymongo.serverSelection - DEBUG - {"message": "Server selection started", "selector": "Primary()", "operation": "listDatabases", "topologyDescription": "<TopologyDescription id: 66ce1f9087f36c21b0ee65f9, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.000508080000145128>]>", "clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}}
+2024-08-28 00:18:48 - pymongo.serverSelection - DEBUG - {"message": "Server selection succeeded", "selector": "Primary()", "operation": "listDatabases", "topologyDescription": "<TopologyDescription id: 66ce1f9087f36c21b0ee65f9, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Standalone, rtt: 0.000508080000145128>]>", "clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:48 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Connection checkout started", "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:48 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Connection checked out", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1, "durationMS": 0.00012597099976119353}
+2024-08-28 00:18:48 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Command started", "command": "{\"listDatabases\": 1, \"nameOnly\": true, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"9a1tGasBSS6AwPNyKPei+Q==\", \"subType\": \"04\"}}}, \"$db\": \"admin\"}", "commandName": "listDatabases", "databaseName": "admin", "requestId": 424238335, "operationId": 424238335, "driverConnectionId": 1, "serverConnectionId": 15, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:48 - pymongo.command - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Command succeeded", "durationMS": 0.523, "reply": "{\"databases\": [{\"name\": \"admin\"}, {\"name\": \"config\"}, {\"name\": \"local\"}], \"ok\": 1.0}", "commandName": "listDatabases", "databaseName": "admin", "requestId": 424238335, "operationId": 424238335, "driverConnectionId": 1, "serverConnectionId": 15, "serverHost": "localhost", "serverPort": 27017}
+2024-08-28 00:18:48 - pymongo.connection - DEBUG - {"clientId": {"$oid": "66ce1f9087f36c21b0ee65f9"}, "message": "Connection checked in", "serverHost": "localhost", "serverPort": 27017, "driverConnectionId": 1}
+2024-08-28 00:18:48 - root - INFO - Starting server
+2024-08-28 00:18:48 - werkzeug - WARNING -  * Debugger is active!
+2024-08-28 00:18:48 - werkzeug - INFO -  * Debugger PIN: 104-643-905
+2024-08-28 00:19:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:19:05] "GET / HTTP/1.1" 200 -
+2024-08-28 00:19:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:19:05] "GET /static/css/margins-padding.css HTTP/1.1" 200 -
+2024-08-28 00:19:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:19:05] "GET /static/css/bootstrap-extends.css HTTP/1.1" 200 -
+2024-08-28 00:19:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:19:05] "GET /static/scripts/particles.js HTTP/1.1" 200 -
+2024-08-28 00:19:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:19:05] "GET /static/images/study.png HTTP/1.1" 200 -
+2024-08-28 00:19:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:19:05] "GET /static/particles.json HTTP/1.1" 200 -
+2024-08-28 00:19:06 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:19:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 00:21:34 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:34] "GET / HTTP/1.1" 200 -
+2024-08-28 00:21:34 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:34] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:21:34 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:34] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:21:34 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:34] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:21:34 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:34] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:21:34 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:34] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:21:38 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:38] "GET / HTTP/1.1" 200 -
+2024-08-28 00:21:38 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:38] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:21:38 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:38] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:21:38 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:38] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:21:38 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:38] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:21:38 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:38] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:21:42 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:42] "GET / HTTP/1.1" 200 -
+2024-08-28 00:21:42 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:42] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:21:42 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:42] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:21:42 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:42] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:21:42 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:42] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:21:42 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:42] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:21:57 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:57] "GET / HTTP/1.1" 200 -
+2024-08-28 00:21:57 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:57] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:21:57 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:57] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:21:57 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:57] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:21:57 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:57] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:21:57 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:21:57] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:24:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:07] "GET / HTTP/1.1" 200 -
+2024-08-28 00:24:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:07] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:24:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:07] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:24:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:07] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:24:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:07] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:24:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:07] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:24:10 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:10] "GET / HTTP/1.1" 200 -
+2024-08-28 00:24:10 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:10] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:24:10 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:10] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:24:10 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:10] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:24:10 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:10] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:24:10 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:10] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:24:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:11] "GET / HTTP/1.1" 200 -
+2024-08-28 00:24:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:11] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:24:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:11] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:24:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:11] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:24:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:11] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:24:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:11] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:24:33 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:33] "GET / HTTP/1.1" 200 -
+2024-08-28 00:24:33 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:33] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:24:33 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:33] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:24:33 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:33] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:24:33 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:33] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:24:33 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:33] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:24:52 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:52] "GET / HTTP/1.1" 200 -
+2024-08-28 00:24:52 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:52] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:24:52 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:52] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:24:52 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:52] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:24:52 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:52] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:24:52 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:24:52] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "GET / HTTP/1.1" 200 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "GET / HTTP/1.1" 200 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:25:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:03] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:25:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:05] "GET / HTTP/1.1" 200 -
+2024-08-28 00:25:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:05] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:25:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:05] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:25:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:05] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:25:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:05] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:25:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:05] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:25:28 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:28] "GET / HTTP/1.1" 200 -
+2024-08-28 00:25:28 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:28] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:25:28 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:28] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:25:28 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:28] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:25:28 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:28] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:25:28 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:25:28] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:31:56 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:31:56] "GET / HTTP/1.1" 200 -
+2024-08-28 00:31:56 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:31:56] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:31:56 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:31:56] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:31:56 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:31:56] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:31:56 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:31:56] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:31:56 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:31:56] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:32:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:32:11] "GET / HTTP/1.1" 200 -
+2024-08-28 00:32:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:32:11] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:32:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:32:11] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:32:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:32:11] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:32:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:32:11] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:32:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:32:11] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:33:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:11] "GET / HTTP/1.1" 200 -
+2024-08-28 00:33:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:11] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:33:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:11] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:33:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:11] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:33:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:11] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:33:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:11] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:33:32 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:32] "GET / HTTP/1.1" 200 -
+2024-08-28 00:33:32 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:32] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:33:32 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:32] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:33:32 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:32] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:33:32 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:32] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:33:32 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:33:32] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:48:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:07] "GET / HTTP/1.1" 200 -
+2024-08-28 00:48:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:07] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:48:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:07] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:48:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:07] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:48:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:07] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:48:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:07] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:48:24 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:24] "GET / HTTP/1.1" 200 -
+2024-08-28 00:48:24 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:24] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:48:24 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:24] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:48:24 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:24] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:48:24 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:24] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:48:24 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:24] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:48:49 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:49] "GET / HTTP/1.1" 200 -
+2024-08-28 00:48:49 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:49] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:48:49 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:49] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:48:49 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:49] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:48:49 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:49] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:48:49 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:48:49] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:49:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:03] "GET / HTTP/1.1" 200 -
+2024-08-28 00:49:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:03] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:49:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:03] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:49:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:03] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:49:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:03] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:49:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:03] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:49:17 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:17] "GET / HTTP/1.1" 200 -
+2024-08-28 00:49:17 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:17] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:49:17 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:17] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:49:17 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:17] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:49:17 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:17] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:49:17 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:17] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:49:37 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:37] "GET / HTTP/1.1" 200 -
+2024-08-28 00:49:37 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:37] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:49:37 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:37] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:49:37 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:37] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:49:37 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:37] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:49:37 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:37] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:49:47 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:47] "GET / HTTP/1.1" 200 -
+2024-08-28 00:49:47 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:47] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:49:47 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:47] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:49:47 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:47] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:49:47 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:47] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:49:47 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:49:47] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:50:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:07] "GET / HTTP/1.1" 200 -
+2024-08-28 00:50:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:07] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:50:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:07] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:50:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:07] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:50:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:07] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:50:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:07] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 00:50:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:43] "GET / HTTP/1.1" 200 -
+2024-08-28 00:50:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:43] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 00:50:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:43] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 00:50:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:43] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 00:50:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:43] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 00:50:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 00:50:43] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:11:14 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:11:14] "GET / HTTP/1.1" 200 -
+2024-08-28 01:11:14 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:11:14] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:11:14 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:11:14] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:11:14 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:11:14] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:11:14 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:11:14] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 01:11:14 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:11:14] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:12:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:12:43] "GET / HTTP/1.1" 200 -
+2024-08-28 01:12:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:12:43] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:12:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:12:43] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:12:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:12:43] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:12:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:12:43] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 01:12:43 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:12:43] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:13:31 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:13:31] "GET / HTTP/1.1" 200 -
+2024-08-28 01:13:31 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:13:31] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:13:31 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:13:31] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:13:31 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:13:31] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:13:31 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:13:31] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 01:13:31 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:13:31] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:15:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:11] "GET / HTTP/1.1" 200 -
+2024-08-28 01:15:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:11] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:15:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:11] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:15:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:11] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:15:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:11] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 01:15:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:11] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:15:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:36] "GET / HTTP/1.1" 200 -
+2024-08-28 01:15:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:36] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:15:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:36] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:15:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:36] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:15:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:36] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 01:15:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:15:36] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:16:48 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:16:48] "GET / HTTP/1.1" 200 -
+2024-08-28 01:16:48 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:16:48] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:16:48 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:16:48] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:16:48 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:16:48] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:16:48 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:16:48] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 01:16:48 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:16:48] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:17:02 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:02] "GET / HTTP/1.1" 200 -
+2024-08-28 01:17:02 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:02] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:17:02 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:02] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:17:02 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:02] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:17:02 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:02] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 01:17:02 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:02] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:17:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:36] "GET / HTTP/1.1" 200 -
+2024-08-28 01:17:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:36] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:17:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:36] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:17:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:36] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:17:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:36] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 01:17:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:17:36] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:18:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:11] "GET /resources/universal_ide HTTP/1.1" 200 -
+2024-08-28 01:18:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:11] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:18:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:11] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:18:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:11] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:18:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:11] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:18:39 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:39] "GET / HTTP/1.1" 200 -
+2024-08-28 01:18:39 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:39] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:18:39 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:39] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:18:39 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:39] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:18:39 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:39] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 01:18:39 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:39] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:18:44 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:44] "GET /resources/universal_ide HTTP/1.1" 200 -
+2024-08-28 01:18:44 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:44] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:18:44 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:44] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:18:44 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:44] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:18:44 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:44] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
+2024-08-28 01:18:49 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:18:49] "POST /api/tio HTTP/1.1" 200 -
+2024-08-28 01:19:18 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:19:18] "GET / HTTP/1.1" 200 -
+2024-08-28 01:19:18 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:19:18] "[36mGET /static/css/bootstrap-extends.css HTTP/1.1[0m" 304 -
+2024-08-28 01:19:18 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:19:18] "[36mGET /static/css/margins-padding.css HTTP/1.1[0m" 304 -
+2024-08-28 01:19:18 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:19:18] "[36mGET /static/scripts/particles.js HTTP/1.1[0m" 304 -
+2024-08-28 01:19:18 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:19:18] "[36mGET /static/images/study.png HTTP/1.1[0m" 304 -
+2024-08-28 01:19:18 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2024 01:19:18] "[36mGET /static/particles.json HTTP/1.1[0m" 304 -
