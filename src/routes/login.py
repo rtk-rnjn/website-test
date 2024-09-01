@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from flask import redirect, render_template, url_for
-from flask_login import current_user, login_required, login_user
+from flask_login import login_user
 from werkzeug.security import check_password_hash
 
 from src import app
@@ -39,4 +39,3 @@ def login():
         return "<h1>Invalid email or password</h1>"
 
     return render_template("login.html", form=form)
-

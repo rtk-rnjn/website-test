@@ -1,23 +1,28 @@
 from __future__ import annotations
 
-from flask_login import UserMixin
 from flask import Request
+from flask_login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from src import app, login_manager
 
 
-
 @login_manager.user_loader
 def load_user(email: str) -> User | None:
-
     db = app.mongo["users_database"]
-    entity = db.users.find_one({"email": email})
+    entity = db.users.find_one(
+        {
+            "$or": [
+                {"email": email},
+                {"username": email},
+            ],
+        },
+    )
 
     if entity is None:
         return None
 
-    user = User()
+    user = User(entity)
     user.email = entity["email"]
     user.password_hash = entity["password_hash"]
 
@@ -43,10 +48,9 @@ def request_loader(request: Request) -> User | None:
 
 
 class User(UserMixin):
-    email: str
-    password_hash: str
-
-    is_admin = False
+    def __init__(self, entity: dict = None) -> None:
+        for key, value in entity.items():
+            setattr(self, key, value)
 
     def check_password(self, password: str) -> bool:
         return check_password_hash(self.password_hash, password)

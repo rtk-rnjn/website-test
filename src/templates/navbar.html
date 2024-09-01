@@ -39,11 +39,12 @@
                 </li>
             </ul>
             {% if current_user.is_authenticated %}
-            <div class="d-flex">
+            <div class="d-flex justify-content-center align-items-center">
+                <a class="nav-link me-3">{{ current_user.username.upper() }}</a>
                 <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
             </div>
             {% else %}
-            <div class="d-flex">
+            <div class="d-flex justify-content-center align-items-center">
                 <a href="{{ url_for('login') }}" class="nav-link me-3">Login</a>
                 <a href="{{ url_for('register') }}" class="nav-link">Register</a>
             </div>
