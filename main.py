@@ -3,7 +3,6 @@ import contextlib
 import os
 
 from src import app
-from src.utils.logger import log
 
 if os.name == "nt":
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
@@ -15,5 +14,4 @@ else:
 
 
 if __name__ == "__main__":
-    log.info("Starting server")
-    app.run("0.0.0.0", 8000, debug=True)
+    app.run(host="0.0.0.0", port=8000, debug=True)
