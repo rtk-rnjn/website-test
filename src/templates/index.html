@@ -3,51 +3,26 @@
 {% from "footer.html" import footer %}
 {% from "front_aptitude.html" import front_aptitude %}
 {% from "front_interview.html" import front_interview %}
-{% from "front_why_us.html" import front_why_us %}
 
-{% block head %}
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
-    <style>
-        .suggestion-container {
-            position: relative;
-        }
-
-        .suggestions {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            max-height: 150px;
-            overflow-y: auto;
-            display: none;
-        }
-
-        .suggestions div {
-            padding: 8px;
-            cursor: pointer;
-        }
-    </style>
-{% endblock %}
 {% block body %}
-    {{ navbar() }}
+    {{ navbar(current_user) }}
     <section style="font-size: small">
         <div class="container-fluid container-title pb-7p">
             <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="fs-1-lg lh-base pt-15p" style="font-family: 'Montserrat', sans-serif">
+                <div class="col">
+                    <h1 class="fs-1-lg lh-base pt-15p">
                         Stop guessing, start growing: Build your unique skillset
                     </h1>
-                    <p class="fs-6 pb-4" style="font-family: 'Roboto', sans-serif;">
+                    <p class="fs-6 pb-4">
                         Build a unique skillset based on your natural talents and watch your career and life flourish.
                     </p>
-                    <button class="btn btn-dark btn-lg border border-light"
-                            type="button"
-                            onclick="window.location.href = `{{ url_for("register") }}`;">
+                    <a class="btn btn-outline-secondary btn-lg rounded rounded-0"
+                            type="button">
                         <i class="fa-brands fa-apple"></i>Sign up
-                    </button>
+                    </a>
                 </div>
-                <div class="col-lg-6 img-tg ">
-                    <img class="title-img pt-7p position-absolute" src="{{ url_for('static', filename='images/study.png') }}" alt="study-img" style="max-width: 500px">
+                <div class="col text-center">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/study.png') }}" alt="study-img">
                 </div>
             </div>
         </div>
@@ -58,9 +33,6 @@
     <br>
     <hr class="mt-5">
     {{ front_interview() }}
-    <br>
-    <hr class="mt-5">
-    {{ front_why_us() }}
     <br>
     {{ footer() }}
 {% endblock %}

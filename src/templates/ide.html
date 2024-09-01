@@ -22,9 +22,9 @@
     {% if scripts_and_styles %}{{ scripts_and_styles }}{% endif %}
 {% endblock %}
 {% block body %}
-    {{ navbar() }}
+    {{ navbar(current_user) }}
     <div class="container-xl">
-        <div class="alert alert-warning text-center">
+        <div class="alert alert-warning text-center rounded rounded-0">
             Your code should not take more than 60 seconds to execute, else it will be terminated. The IDE is powered by <a href="https://tio.run/#">Try It Online</a>.
         </div>
         <div class="row">
@@ -35,7 +35,7 @@
                     </div>
                     <div class="ms-auto">{{ language_dropdown() }}</div>
                     <div class="ms-auto">
-                        <button class="btn border border-1" id="run-code">Execute</button>
+                        <button class="btn border border-1 rounded rounded-0" id="run-code">Execute</button>
                     </div>
                 </div>
                 <div id="code-editor" class="border border-1 mt-1"></div>
@@ -46,7 +46,7 @@
                         <p class="fs-3">Output</p>
                     </div>
                     <div class="ms-auto">
-                        <button class="btn border border-1" id="clear-output">Clear Output</button>
+                        <button class="btn border border-1 rounded rounded-0" id="clear-output">Clear Output</button>
                     </div>
                 </div>
                 <div class="row">

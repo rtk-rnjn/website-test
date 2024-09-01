@@ -22,16 +22,6 @@
     color: white;
 }
 
-.cyan-glow {
-    filter: drop-shadow(0 0 0.35rem rgba(0, 234, 255, 0.534));
-}
-
-.cyan-glow:hover {
-    transform: matrix3d(1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1);
-    filter: drop-shadow(0 0 0.35rem rgba(0, 255, 136, 0.685));
-    transition: .2s ease-in-out;
-}
-
 .fs-1-lg {
     font-size: 3rem;
 }

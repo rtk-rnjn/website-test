@@ -2,7 +2,7 @@
 {% from "navbar.html" import navbar %}
 {% from "footer.html" import footer %}
 {% block body %}
-    {{ navbar() }}
+    {{ navbar(current_user) }}
     <div class="row">
         <div class="col-9">
             <div class="container m-2 p-2 fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, rem.</div>
