@@ -17,7 +17,7 @@
                         Build a unique skillset based on your natural talents and watch your career and life flourish.
                     </p>
                     {% if not current_user.is_authenticated %}
-                        <a class="btn btn-outline-secondary btn-lg rounded rounded-0"
+                        <a href="{{ url_for('register') }}" class="btn btn-outline-secondary btn-lg rounded rounded-0"
                             type="button">
                             <i class="fa-brands fa-apple"></i>Sign up
                         </a>

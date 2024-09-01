@@ -1,1 +1,22 @@
-{{ topics }}
+
+    
+
+
+{% extends "base.html" %}
+{% from "footer.html" import footer %}
+{% block head %}{% endblock %}
+{% block body %}
+    <div style="margin-top: 50px; text-align: center;">
+        <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 20px;border: solid; padding: 1%;">{{title}}</h1>
+    </div>
+    
+    {% for topic in topics %}
+    <div style="border: solid; margin: 2%; border-radius: 10%;">    
+        <a href = "#" style="text-align: center; ">
+            <h2>{{ topic }}</h2>    
+        </a >
+    </div>
+
+    {% endfor %}
+    
+{% endblock %}
