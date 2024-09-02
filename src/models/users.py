@@ -40,15 +40,13 @@ def request_loader(request: Request) -> User | None:
     if entity is None:
         return None
 
-    user = User()
-    user.email = entity["email"]
-    user.password_hash = entity["password_hash"]
+    user = User(entity)
 
     return user if user.check_password(request.form["password"]) else None
 
 
 class User(UserMixin):
-    def __init__(self, entity: dict = None) -> None:
+    def __init__(self, entity: dict) -> None:
         for key, value in entity.items():
             setattr(self, key, value)
 

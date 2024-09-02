@@ -1,22 +1,44 @@
-
-    
-
-
 {% extends "base.html" %}
 {% from "footer.html" import footer %}
-{% block head %}{% endblock %}
-{% block body %}
-    <div style="margin-top: 50px; text-align: center;">
-        <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 20px;border: solid; padding: 1%;">{{title}}</h1>
-    </div>
-    
-    {% for topic in topics %}
-    <div style="border: solid; margin: 2%; border-radius: 10%;">    
-        <a href = "#" style="text-align: center; ">
-            <h2>{{ topic }}</h2>    
-        </a >
-    </div>
+{% from "navbar.html" import navbar %}
+{% from "footer.html" import footer %}
 
-    {% endfor %}
-    
+{% block head %}
+<style>
+    .zoom {
+        transition: transform .2s;
+    }
+
+    .zoom:hover {
+        transform: scale(1.2);
+        z-index: 1;
+    }
+</style>
+{% endblock %}
+{% block body %}
+
+{{ navbar(current_user) }}
+
+<div class="text-center mt-3">
+    <p class="fs-1">{{ title }}</p>
+</div>
+
+<hr>
+
+{% if topics %}
+<div class="container">
+    <div class="row row-cols-lg-4">
+        {% for topic in topics %}
+        <div class="col-3 d-flex justify-content-center">
+            <div class="card mb-2 mt-2 rounded rounded-0 zoom" style="width: 18rem;">
+                <div class="card-body d-flex justify-content-center align-items-center text-center">
+                    <p class="card-title text-center fs-5">{{ topic }}</p>
+                    <a class="stretched-link" href="{{ url_for(title.lower().replace(' ', '_'), topic=topic.lower().replace(' ', '_')) }}"></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
 {% endblock %}
