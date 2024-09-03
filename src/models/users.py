@@ -4,12 +4,12 @@ from flask import Request
 from flask_login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from src import app, login_manager
+from src import login_manager, mongo_client as mongo
 
 
 @login_manager.user_loader
 def load_user(email: str) -> User | None:
-    db = app.mongo["users_database"]
+    db = mongo["users_database"]
     entity = db.users.find_one(
         {
             "$or": [
@@ -35,7 +35,7 @@ def request_loader(request: Request) -> User | None:
     if email is None:
         return None
 
-    entity = app.mongo.users_database.users.find_one({"email": email})
+    entity = mongo.users_database.users.find_one({"email": email})
 
     if entity is None:
         return None

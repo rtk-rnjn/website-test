@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import EmailField, PasswordField, StringField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 
-from src import app
+from src import app, mongo_client as mongo
 
 
 class RegisterForm(FlaskForm):
@@ -23,7 +23,7 @@ class RegisterForm(FlaskForm):
     register = SubmitField("Register")
 
     def validate_username(self, username: StringField) -> bool:
-        return app.mongo.users_database.users.find_one({"username": username.data}) is None
+        return mongo.users_database.users.find_one({"username": username.data}) is None
 
     def validate_email(self, email: EmailField) -> bool:
-        return app.mongo.users_database.users.find_one({"email": email.data}) is None
+        return mongo.users_database.users.find_one({"email": email.data}) is None

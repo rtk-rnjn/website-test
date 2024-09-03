@@ -4,7 +4,7 @@ from flask import redirect, render_template, url_for
 from flask_login import login_user
 from werkzeug.security import check_password_hash
 
-from src import app
+from src import app, mongo_client as mongo
 from src.forms import LoginForm
 from src.models import User
 
@@ -15,7 +15,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         email = form.email.data
-        entity = app.mongo.users_database.users.find_one(
+        entity = mongo.users_database.users.find_one(
             {
                 "$or": [
                     {"email": email},

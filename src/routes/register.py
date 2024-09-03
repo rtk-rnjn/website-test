@@ -3,7 +3,7 @@ from __future__ import annotations
 from flask import render_template, url_for
 from werkzeug.security import generate_password_hash
 
-from src import app
+from src import app, mongo_client as mongo
 from src.forms import RegisterForm
 
 
@@ -12,8 +12,6 @@ from src.forms import RegisterForm
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
-        mongo = app.mongo
-
         db = mongo["users_database"]
         email = form.email.data
 
