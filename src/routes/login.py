@@ -30,7 +30,7 @@ def login():
         assert form.password.data and email
 
         if check_password_hash(password_hash, form.password.data):
-            user = User()
+            user = User(entity)
             user.email = email
             login_user(user, remember=True)
 
