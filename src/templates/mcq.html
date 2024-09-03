@@ -13,7 +13,7 @@
     </div>
 </div>
 <div class="row bg-light">
-    <div class="col-9 overflow-scroll vh-100 border border-1">
+    <div class="col overflow-scroll vh-100 border border-1">
         {% for item in questions %}
             <div class="border border-1 mb-3 mt-3 ms-2" id="question-{{ loop.index }}">
                 <div class="row">
@@ -44,7 +44,7 @@
             </div>
         {% endfor %}
     </div>
-    <div class="col-3 p-3 border border-1">
+    <div class="col-3 p-3 border border-1 d-none d-md-block d-lg-block d-xl-block">
         <div class="container text-center">
             <div class="mb-3 fs-5">All Questions</div>
             <div class="row">
