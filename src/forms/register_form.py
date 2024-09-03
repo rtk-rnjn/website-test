@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import EmailField, PasswordField, StringField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 
-from src import app, mongo_client as mongo
+from src import mongo_client as mongo
 
 
 class RegisterForm(FlaskForm):
