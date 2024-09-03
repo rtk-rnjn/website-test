@@ -1,12 +1,10 @@
 import os
-import pathlib
 
 import flask_login
 from dotenv import load_dotenv
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect
 from pymongo import MongoClient
-
 
 csrf = CSRFProtect()
 load_dotenv()
@@ -29,8 +27,6 @@ else:
         document_class=dict,
         tz_aware=True,
     )
-
-app.mongo = mongo_client
 
 # ping to check if the connection is successful
 try:
