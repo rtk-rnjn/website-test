@@ -30,7 +30,7 @@
     <div class="row row-cols-lg-4 row-cols-1 row-cols-sm-2">
         {% for topic in topics %}
         <div class="col d-flex justify-content-center">
-            <div class="card m-2 rounded rounded-0 zoom" style="width: 18rem;">
+            <div class="card m-2 rounded rounded-0 zoom shadow-sm" style="width: 18rem;">
                 <div class="card-body d-flex justify-content-center align-items-center text-center">
                     <p class="card-title text-center fs-5">{{ topic }}</p>
                     <a class="stretched-link" href="{{ url_for(title.lower().replace(' ', '_'), topic=topic.lower().replace(' ', '_')) }}"></a>
