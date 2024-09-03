@@ -23,6 +23,7 @@ def get_random_questions(*, database: str, collection: str, count: int = 10) -> 
     # _id = 0 means we don't want to include the _id field in the response
     return list(col.aggregate([{"$sample": {"size": count}}, {"$project": {"_id": 0}}]))
 
+
 @app.route("/competitive-reasoning", methods=["GET"])
 async def competitive_reasoning():
     if topic_arg := request.args.get("topic"):
