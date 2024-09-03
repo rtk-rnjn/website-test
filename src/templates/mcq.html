@@ -15,7 +15,7 @@
 <div class="row bg-light">
     <div class="col overflow-scroll vh-100 border border-1">
         {% for item in questions %}
-            <div class="border border-1 mb-3 mt-3 ms-2 shadow" id="question-{{ loop.index }}">
+            <div class="border border-1 mb-3 mt-3 ms-2 shadow-sm" id="question-{{ loop.index }}">
                 <div class="row">
                     <div class="col">
                         <div class="container m-3 fs-4 d-flex">
@@ -31,10 +31,7 @@
                             {% for option in item.o %}
                                 {% set _index = loop.index - 1 %}
                                 {% set i = _index | string %}
-                                <input class="m-3 p-3"
-                                        type="radio"
-                                        name="question{{ index }}"
-                                        value="{{ option }}">
+                                <input class="m-3 p-3 shadow-sm" type="radio" name="question{{ index }}" value="{{ option }}">
                                 <label for="question{{ index }}" class="fs-5">{{ option }}</label>
                                 <br>
                             {% endfor %}
@@ -50,7 +47,7 @@
             <div class="row">
                 {% for item in questions %}
                     <div class="col-2 mb-2">
-                        <a class="btn border border-1 rounded rounded-0 fs-5" href="#question-{{ loop.index }}">{{ loop.index }}</a>
+                        <a class="btn border border-1 rounded rounded-0 fs-5 shadow-sm" href="#question-{{ loop.index }}">{{ loop.index }}</a>
                     </div>
                 {% endfor %}
             </div>
