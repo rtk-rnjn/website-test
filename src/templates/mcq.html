@@ -31,13 +31,14 @@
                             {% for option in item.o %}
                                 {% set _index = loop.index - 1 %}
                                 {% set i = _index | string %}
-                                <input class="m-3 p-3 shadow-sm" type="radio" name="question{{ index }}" value="{{ option }}">
+                                <input class="m-3 p-3 shadow-sm "  type="radio" name="question{{ index }}" value="{{ option }}">
                                 <label for="question{{ index }}" class="fs-5">{{ option }}</label>
                                 <br>
                             {% endfor %}
                         </div>
                     </div>
                 </div>
+                <button class="btn btn-secondary m-4 rounded px-3" onclick="clearSelection({{ index }})">clear</button>
             </div>
         {% endfor %}
     </div>
@@ -54,4 +55,15 @@
         </div>
     </div>
 </div>
+<script>
+    function clearSelection(index) {
+        // Get all radio buttons with name "Choose"
+        var radioButtons = document.getElementsByName('question'+index);
+        
+        // Loop through each radio button and uncheck it
+        for (var i = 0; i < radioButtons.length; i++) {
+            radioButtons[i].checked = false;
+        }
+    }
+</script>
 {% endblock %}
