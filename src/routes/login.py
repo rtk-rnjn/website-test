@@ -12,7 +12,7 @@ from src.models import User
 @app.route("/login", methods=["GET", "POST"])
 @app.route("/login/", methods=["GET", "POST"])
 def login():
-    form = LoginForm()
+    form: LoginForm = LoginForm()
     if form.validate_on_submit():
         email = form.email.data
         entity = mongo.users_database.users.find_one(
@@ -24,7 +24,7 @@ def login():
             },
         )
         if entity is None:
-            return "<h1>Invalid email or password</h1>"
+            return render_template("login.html", form=form, error="Invalid email or password")
 
         password_hash = entity["password_hash"]
         assert form.password.data and email
@@ -36,6 +36,6 @@ def login():
 
             return redirect(url_for("home"))
 
-        return "<h1>Invalid email or password</h1>"
+        return render_template("login.html", form=form, error="Invalid email or password")
 
     return render_template("login.html", form=form)

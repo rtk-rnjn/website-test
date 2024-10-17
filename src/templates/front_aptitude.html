@@ -1,5 +1,5 @@
 {% macro front_aptitude() -%}
-<style>
+    <style>
     .zoom {
         transition: transform .35s;
     }
@@ -8,34 +8,33 @@
         transform: scale(1.08);
         z-index: 1;
     }
-</style>
-
-<div class="m-3 p-5">
-    <div class="row text-center row-cols-lg-3 row-cols-sm-1 row-cols-1 row-cols-xl-3">
-        <div class="col mb-3">
-            <div class="card zoom p-3 border border-1 border-dark fs-4 rounded rounded-0 bg-light">
-                <a class="nav-link stretched-link" href="{{ url_for('arithmetic_ability') }}">
-                    <i class="bi bi-gear fs-1"></i>
-                    <p class="fs-3 searchable">Arithmetic Ability</p>
-                </a>
+    </style>
+    <div class="m-3 p-5">
+        <div class="row text-center row-cols-lg-3 row-cols-sm-1 row-cols-1 row-cols-xl-3">
+            <div class="col mb-3">
+                <div class="card zoom p-3 border border-1 border-dark fs-4 rounded rounded-0 bg-light">
+                    <a class="nav-link stretched-link" href="{{ url_for("arithmetic_ability") }}">
+                        <i class="bi bi-gear fs-1"></i>
+                        <p class="fs-3 searchable">Arithmetic Ability</p>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col mb-3">
-            <div class="card zoom p-3 border border-1 border-dark fs-4 rounded rounded-0 bg-light">
-                <a class="nav-link stretched-link" href="{{ url_for('competitive_english') }}">
-                    <i class="bi bi-patch-question fs-1"></i>
-                    <p class="fs-3 searchable">Competitive English</p>
-                </a>
+            <div class="col mb-3">
+                <div class="card zoom p-3 border border-1 border-dark fs-4 rounded rounded-0 bg-light">
+                    <a class="nav-link stretched-link" href="{{ url_for("competitive_english") }}">
+                        <i class="bi bi-patch-question fs-1"></i>
+                        <p class="fs-3 searchable">Competitive English</p>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col mb-3">
-            <div class="card zoom p-3 border border-1 border-dark fs-4 rounded rounded-0 bg-light">
-                <a class="nav-link stretched-link" href="{{ url_for('competitive_reasoning') }}">
-                    <i class="bi bi-clipboard-data fs-1"></i>
-                    <p class="fs-3 searchable">Competitive Reasoning</p>
-                </a>
+            <div class="col mb-3">
+                <div class="card zoom p-3 border border-1 border-dark fs-4 rounded rounded-0 bg-light">
+                    <a class="nav-link stretched-link" href="{{ url_for("competitive_reasoning") }}">
+                        <i class="bi bi-clipboard-data fs-1"></i>
+                        <p class="fs-3 searchable">Competitive Reasoning</p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>                        
 {%- endmacro %}

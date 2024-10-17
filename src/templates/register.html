@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 {% from "footer.html" import footer %}
-
 {% block body %}
     <section class="intro vh-100">
-        <div class="mask d-flex align-items-center h-100"
-             style="background-color: #D6D6D6">
+        <div class="mask d-flex align-items-center h-100" style="background-color: #D6D6D6">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                        <div class="card" style="border-radius: 1rem;">
+                        <div class="card rounded rounded-0 shadow">
                             <div class="card-body p-5">
                                 <div class="my-md-4 pb-1">
                                     <h1 class="fw-bold mb-3 text-center">Register Now!</h1>
@@ -29,7 +27,7 @@
                                     {% endif %}
                                     <form method="POST" action='{{ url_for("register") }}'>
                                         {{ form.csrf_token }}
-                                        {% set class = "form-control form-control-lg" %}
+                                        {% set class = "form-control rounded rounded-0" %}
                                         <div class="form-outline mb-4">
                                             {{ form.fullname.label }}
                                             {% for error in form.fullname.errors %}<p class="text-danger">{{ error }}</p>{% endfor %}
@@ -55,7 +53,7 @@
                                             {% for error in form.confirm_password.errors %}<p class="text-danger">{{ error }}</p>{% endfor %}
                                             {{ form.confirm_password(class=class) }}
                                         </div>
-                                        <div class="text-center">{{ form.register(class="btn border btn-lg btn-rounded px-5") }}</div>
+                                        <div class="text-center">{{ form.register(class="btn btn-secondary rounded rounded-0 px-5") }}</div>
                                     </form>
                                 </div>
                                 <div class="text-center">

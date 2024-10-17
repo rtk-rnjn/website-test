@@ -37,35 +37,10 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <div class="d-flex">
-                                <div class="ms-auto">
-                                    <button class="btn border border-1 rounded rounded-0" id="clr-{{ index }}">Clear Response</button>
-                                    <script>
-                                        document.getElementById("clr-{{ index }}").addEventListener("click", function() {
-                                            document.getElementsByName("question{{ index }}").forEach(function(item) {
-                                                item.checked = false;
-                                            });
-                                        });
-                                    </script>
-                                </div>
-                            </div>
+                            {{ item.e | safe }}
                         </div>
                     </div>
                 {% endfor %}
-            </div>
-            <div class="col-3 p-3 border border-1 bg-light d-none d-md-block d-lg-block d-xl-block">
-                <div class="container text-center">
-                    <div class="mb-3 fs-5">All Questions</div>
-                    <div class="row">
-                        {% for item in questions %}
-                            <div class="col-3 mb-2">
-                                <a class="btn border font-monospace border-1 rounded rounded-0" href="#question-{{ loop.index }}">{{ loop.index }}</a>
-                            </div>
-                        {% endfor %}
-                    </div>
-                    <hr>
-                    <button class="btn btn-success border border-1 rounded rounded-0" id="submit-test">Submit Test</button>
-                </div>
             </div>
         </div>
     </div>

@@ -62,8 +62,5 @@ class User(UserMixin):
     def __repr__(self) -> str:
         return f"<User {self.email}>"
 
-    def __eq__(self, other: User) -> bool:
-        return self.email == other.email
-
     def __hash__(self) -> int:
         return hash(self.email)

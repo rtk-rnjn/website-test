@@ -1,22 +1,3 @@
-.mt-8 {
-    margin-top: 8rem !important;
-}
-
-.ps-8 {
-    padding-left: 8rem !important;
-}
-
-.mb-8 {
-    margin-bottom: 8rem !important;
-}
-
-.front-page {
-    background: url(/static/images/front.jpg);
-    background-repeat: no-repeat;
-    transition: opacity 1s ease-in-out;
-    background-size: cover;
-    background-position: center;
-}
 
 .white-text {
     color: white;
@@ -30,17 +11,6 @@
     font-size: 5rem;
 }
 
-.title-img {
-    left: 60%;
-    width: 35%;
-}
-
 .container-title {
     padding: 3% 10%;
-}
-
-@media only screen and (max-width: 1026px) {
-    .title-img {
-        display: none;
-    }
 }

@@ -3,12 +3,11 @@
 {% block head %}{% endblock %}
 {% block body %}
     <section class="intro vh-100">
-        <div class="mask d-flex align-items-center h-100"
-             style="background-color: #D6D6D6">
+        <div class="mask d-flex align-items-center h-100" style="background-color: #D6D6D6">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                        <div class="card" style="border-radius: 1rem;">
+                        <div class="card rounded rounded-0 shadow">
                             <div class="card-body p-5">
                                 <div class="my-md-4 pb-1">
                                     <h1 class="fw-bold mb-3 text-center">Welcome Back</h1>
@@ -17,7 +16,7 @@
                                     </div>
                                     <form method="POST" action="{{ url_for("login") }}">
                                         {{ form.csrf_token }}
-                                        {% set class = "form-control form-control-lg" %}
+                                        {% set class = "form-control rounded rounded-0" %}
                                         <div class="form-outline mb-4">
                                             {{ form.email.label }}
                                             {% for error in form.email.errors %}<p class="text-danger">{{ error }}</p>{% endfor %}
@@ -28,7 +27,7 @@
                                             {% for error in form.password.errors %}<p class="text-danger">{{ error }}</p>{% endfor %}
                                             {{ form.password(class=class) }}
                                         </div>
-                                        <div class="text-center">{{ form.login(class="btn border btn-lg btn-rounded px-5") }}</div>
+                                        <div class="text-center">{{ form.login(class="btn btn-primary rounded rounded-0 px-5") }}</div>
                                     </form>
                                 </div>
                                 <div class="text-center">
